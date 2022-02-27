@@ -3,6 +3,21 @@
 {% block title %} Home {% endblock title %}
 
 {% block content %}
-<h1> home page </h1>
+
+<h1> Home page </h1>
+{% if user.is_authenticated %}
+Hi {{user.email}}
+<hr>
+<p>If you want to log out <a href="{% url 'logout' %}"> click here </a> </p>
+
+{% else %}
+<p> You are not logged in</p>
+<hr>
+<a href="{% url 'login' %}">Log In</a>
+<br>
+or
+<br>
+<a href="{% url 'signup' %}">Sign Up</a>
+{% endif %}
 
 {% endblock content %}
