@@ -12,7 +12,6 @@ class CustomUserTests(TestCase):
         )
         self.assertEqual(user.username,'ikram')
         self.assertEqual(user.email,'ik@gmail.com')
-        #self.assertEqual(user.password,'ik98')
         self.assertTrue(user.is_active)
         self.assertFalse(user.is_staff)
         self.assertFalse(user.is_superuser)
