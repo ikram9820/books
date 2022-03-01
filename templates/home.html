@@ -8,16 +8,16 @@
 {% if user.is_authenticated %}
 Hi {{user.email}}
 <hr>
-<p>If you want to log out <a href="{% url 'logout' %}"> click here </a> </p>
+<p>If you want to log out <a href="{% url 'account_logout' %}"> click here </a> </p>
 
 {% else %}
 <p> You are not logged in</p>
 <hr>
-<a href="{% url 'login' %}">Log In</a>
+<a href="{% url 'account_login' %}">Log In</a>
 <br>
 or
 <br>
-<a href="{% url 'signup' %}">Sign Up</a>
+<a href="{% url 'account_signup' %}">Sign Up</a>
 {% endif %}
 
 {% endblock content %}
