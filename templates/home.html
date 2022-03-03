@@ -5,6 +5,11 @@
 {% block content %}
 
 <h1> Home page </h1>
+
+<form class="form-inline mt-2 mt-md-0" action="{% url 'search_results' %}" method= 'get'>
+    <input name='q' class="form-control mr-sm-2" type="text" placeholder='Search' aria-label='Search'>
+</form>
+
 {% if user.is_authenticated %}
 Hi {{user.email}}
 <hr>
