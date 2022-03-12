@@ -1,0 +1,24 @@
+{% extends '_base.html' %}
+ {% block title %} {{profile_user.username}} {%endblock title %}
+ {% block content %}
+
+
+ <h3>{{profile_user.username}}</h3>
+ <br>
+ {% if profile_user.bio %}
+  <p>{{profile_user.bio}}</p>
+  <br>
+ {% endif %}
+
+ <hr>
+
+ {% if not books %}
+  <h4>There is no book in this profile</h4>
+  {% else %}
+
+    {% include '_pagination.html' %}
+    {% include '_post_card.html' %}
+
+  {% endif %} 
+
+{% endblock content %}

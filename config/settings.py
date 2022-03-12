@@ -10,11 +10,6 @@ ALLOWED_HOSTS = []
 
 
 
-AUTH_USER_MODEL = 'accounts.CustomUser'
-
-LOGIN_REDIRECT_URL= 'home'
-LOGOUT_REDIRECT_URL='home'
-
 STATIC_URL = '/static/'
 STATICFILES_DIRS= (str(BASE_DIR.joinpath('static')),)
 STATIC_ROOT= str(BASE_DIR.joinpath('staticfiles'))
@@ -27,18 +22,20 @@ MEDIA_URL= '/media/'
 MEDIA_ROOT= str(BASE_DIR.joinpath('media'))
 
 
-CRISPY_TEMPLATE_PACK= 'bootstrap4'
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK= 'bootstrap5'
 
-SITE_ID= 1
-AUTHENTICATION_BACKENDS = (
-'django.contrib.auth.backends.ModelBackend',
-'allauth.account.auth_backends.AuthenticationBackend',
-)
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-ACCOUNT_LOGOUT_REDIRECT= 'home'
-ACCOUNT_SESSION_REMEMBER = True 
-ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
 
+AUTH_USER_MODEL = 'accounts.CustomUser'
+
+LOGIN_REDIRECT_URL= 'book_list'
+LOGOUT_REDIRECT_URL='book_list'
+
+INTERNAL_IPS = [
+    # ...
+    "127.0.0.1",
+    # ...
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -47,14 +44,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites',
 
     'crispy_forms',
-    'allauth',
-    'allauth.account',
+    'crispy_bootstrap5',
+    "debug_toolbar",
 
     'accounts',
-    'pages',
     'books',
 ]
 
@@ -63,6 +58,8 @@ INSTALLED_APPS = [
 
 
 MIDDLEWARE = [
+    
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',

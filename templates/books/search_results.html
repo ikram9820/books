@@ -4,15 +4,19 @@
 
 {% block content%}
 
-<h1>Search Results </h1>
-{% for book in books %}
+{% if not books %}
+  <h4>There is no book</h4>
+{% else %}
+  <div class="d-flex justify-content-center">
+  <form class="form-inline mt-2 mb-2 mt-md-0" action="{% url 'search_results' %}" method= 'get'>
+      <input name='q' class="form-control mr-sm-2"  style="max-width: 540px; min-width: 540px; "  type="text" placeholder='Search' aria-label='Search'>
+  </form>
+  <p class="h1">Search result</p>
+  </div>
 
-    <div>
-        <h3> <a href= "{{ book.get_absolute_url }}"> {{book.title}}</a></h3>
-        <p>Author: {{book.author}} </p>
-        <p>Price>: {{book.price}} </p>
-    </div>
+  {% include '_pagination.html' %}
+  {% include '_post_card.html' %}
 
-{% endfor %}
+{% endif %} 
 
 {% endblock content %}

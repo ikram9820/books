@@ -5,9 +5,9 @@ from django.urls import path,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('accounts/',include('django.contrib.auth.urls')),
-    # path('accounts/',include('accounts.urls')),
-    path('accounts/', include('allauth.urls')),
-    path('',include('pages.urls')),
-    path('books/',include('books.urls')),
+    path('accounts/',include('django.contrib.auth.urls')),
+    path('accounts/',include('accounts.urls')),
+    path('__debug__/', include('debug_toolbar.urls')),
+    # path('',include('pages.urls')),
+    path('',include('books.urls')),
 ] + static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)

@@ -8,6 +8,9 @@ django = "*"
 mysqlclient = "*"
 django-crispy-forms = "*"
 django-allauth = "*"
+pillow = "*"
+crispy-bootstrap5 = "*"
+django-debug-toolbar = "*"
 
 [dev-packages]
 
