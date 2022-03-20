@@ -1,12 +1,16 @@
-from pickle import TRUE
-from pydoc import classify_class_attrs
-from re import template
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, redirect,render
 from django.views.generic import ListView,DetailView,DeleteView,UpdateView,CreateView
 from django.db.models import Q
 from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin,UserPassesTestMixin
-from .models import Book
+from .models import Book,Favorite,FavoriteBook
+from django.urls import reverse_lazy
+import mimetypes
+import os
+from django.http.response import HttpResponse
+
+
+
 
 class BookListView(ListView):
     model= Book
@@ -17,17 +21,11 @@ class BookListView(ListView):
     def get_queryset(self):
         return Book.objects.filter(is_visible=True).order_by('-posted_at')
 
-class BookDetailView(DetailView):
-    model= Book
-    template_name='books/book_detail.html'
-    context_object_name= 'book'
-    login_url= 'login'
-
 class BookCreateView(LoginRequiredMixin,CreateView):
     model= Book
     template_name= 'books/book_form.html'
-    fields= ['title','author','pdf','is_visible','discription']
-    success_url= '/'
+    fields= ['title','author','pdf','is_visible']
+    success_url= reverse_lazy('my_profile')
     def form_valid(self, form):
         form.instance.user=self.request.user
         return super().form_valid(form)
@@ -35,8 +33,8 @@ class BookCreateView(LoginRequiredMixin,CreateView):
 class BookUpdateView(LoginRequiredMixin,UserPassesTestMixin, UpdateView):
     model= Book
     template_name= "books/book_form.html"
-    fields= ['title','author','pdf','is_visible','discription']
-    success_url= '/'
+    fields= ['title','author','pdf','is_visible']
+    success_url= reverse_lazy('my_profile')
 
     def form_valid(self, form):
         form.instance.user = self.request.user
@@ -47,13 +45,12 @@ class BookUpdateView(LoginRequiredMixin,UserPassesTestMixin, UpdateView):
         if self.request.user == book.user:
             return True
         return False
-
 
 class BookVisibilityUpdateView(LoginRequiredMixin,UserPassesTestMixin, UpdateView):
     model= Book
     template_name= "books/book_form.html"
     fields= ['is_visible']
-    success_url= '/'
+    success_url= reverse_lazy('my_profile')
 
     def form_valid(self, form):
         form.instance.user = self.request.user
@@ -64,9 +61,10 @@ class BookVisibilityUpdateView(LoginRequiredMixin,UserPassesTestMixin, UpdateVie
         if self.request.user == book.user:
             return True
         return False
+
 class BookDelteView(LoginRequiredMixin,UserPassesTestMixin,DeleteView):
     model= Book
-    success_url= '/'
+    success_url= reverse_lazy('my_profile')
     template_name='books/delete_book.html'
 
     def test_func(self):
@@ -75,19 +73,32 @@ class BookDelteView(LoginRequiredMixin,UserPassesTestMixin,DeleteView):
             return True
         return False
 
+def get_fav_book_list(request):
+    fav,created= Favorite.objects.get_or_create(id= request.session.get('fav_uuid',None))#,user=request.user if request.user.is_authenticated else None)
+    if created:
+        request.session['fav_uuid']= str(fav.id)
+    # if request.user.is_authenticated:
+    #     fav_books=FavoriteBook.objects.filter(favorite=fav).only('book')
+    # else:
+    fav_books=FavoriteBook.objects.filter(favorite=fav).only('book')
+    books=[]
+    for fav_book in fav_books:
+        books.append(fav_book.book)
 
-
-class FavoriteCreateView(CreateView):
-    pass
-
-class FavoriteDetailView(DetailView):
-    pass
-
-class FavItemCreateView(CreateView):
-    pass
-
-class FavItemListView(ListView):
-    pass
+    return render(request,'books/fav.html',{'books':books})
+  
+def add_book_to_fav(request,pk):
+    fav,created= Favorite.objects.get_or_create(id= request.session.get('fav_uuid',None))#,user=request.user if request.user.is_authenticated else None)
+    if created:
+        request.session['fav_uuid']= str(fav.id)
+    
+    try:
+        fav_book= FavoriteBook.objects.get(favorite=fav,book_id=pk)
+        fav_book.delete()
+    except FavoriteBook.DoesNotExist:
+        FavoriteBook.objects.create(favorite=fav,book_id=pk)
+    # FavoriteBook.objects.create(favorite= fav,book_id=pk )
+    return redirect('book_list')
 
 class ProfileListView(ListView):
     model=Book
@@ -97,24 +108,14 @@ class ProfileListView(ListView):
 
     def get_context_data(self, **kwargs):
         context= super(ProfileListView,self).get_context_data(**kwargs)
-        if self.kwargs.get('username'):
-            context['profile_user']= get_object_or_404(get_user_model(), username= self.kwargs.get('username'))
-        elif self.request.user.is_authenticated:
-            context['profile_user']= self.request.user
-        
+        context['profile_user']= get_object_or_404(get_user_model(), username= self.kwargs.get('username'))        
         return context
 
     def get_queryset(self):
-        if self.kwargs.get('username'):
-            user= get_object_or_404(get_user_model(), username= self.kwargs.get('username'))
-        elif self.request.user.is_authenticated:
-            user=self.request.user
-        else:
-            user= None
-
+        user= get_object_or_404(get_user_model(), username= self.kwargs.get('username'))
         return Book.objects.filter(Q(user=user)& Q(is_visible=True)).order_by('-posted_at')
-    
-class MyProfileListView(ListView):
+
+class MyProfileListView(LoginRequiredMixin,ListView):
     model=Book
     template_name='profile/my_profile.html'
     context_object_name='books'

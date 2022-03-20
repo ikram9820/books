@@ -1,13 +1,13 @@
 {% extends '_base.html' %}
 {% load crispy_forms_tags %}
 
-{% block title %} Sign Up {% endblock title %}
+{% block title %} Edit Profile {% endblock title %}
 
 {% block content %}
 
 <div class="d-flex justify-content-center">
     <div class="card mb-3 p-2" style="max-width: 540px; min-width: 540px;">
-        <div class="card-header bg-transparent "><h5> Sign Up </h5></div>  
+        <div class="card-header bg-transparent "><h5> Edit Profile </h5></div>  
         
             <form action="" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
@@ -16,14 +16,9 @@
                         {{ form|crispy }}
                     </fieldset>
                     <div class="form-group">
-                        <button class="btn btn-outline-info" type="submit">Login</button>
+                        <button class="btn btn-outline-info" type="submit">Edit</button>
                     </div>
                 </div>
-                    <div class="card-body form-group">
-                        <small class="text-muted">
-                            Do have an Account? <a class="ml-2" href="{% url 'login' %}">Log In</a>
-                        </small>
-                    </div>
             </form>
         </div>
     </div>

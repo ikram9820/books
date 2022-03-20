@@ -8,115 +8,38 @@
     {% endif %}
 {%endblock title %}
 
- {% block content %}
-
-
- {% if user.is_authenticated %}
- <h3>{{user.username}}</h3>
- <br> 
-    {% if user.bio %}
-        <p>{{user.bio}}</p>
+{% block content %}
+  <div class="d-flex justify-content-center">
+    <div class="mb-3"  style="max-width: 540px; min-width: 540px;">
+      <div class="card-header bg-transparent "><h3>{{user.username}}</h3></div>
+      <div class="card-body">
+        <p class="card-text">  
+          {% if user.bio %}
+          {{user.bio}}
+          <br>
+          {% endif %}
+        </p>
+      </div>
+      <div class="card-footer bg-transparent">
+        <a href="{% url 'edit_profile' user.id %}" > Edit profile </a>
         <br>
-    {% endif %}
-<a href="#" > Edit profile </a>
-<br>
-<a href="{% url 'logout' %}">Logout </a>
- <hr>
-
- {% if not books %}
-<h4>There is no book in this profile</h4>
-{% else %}
-
-<div class="d-flex justify-content-center">
-  <a href="{% url 'add_book' %}"> Add New Book</a>
-</div>
-
-
-<div class="d-flex justify-content-center">
-  {% if is_paginated %}
-  
-  {% if page_obj.has_previous %}
-    <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
-    <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
-  {% endif %}
-  
-  {% for num in page_obj.paginator.page_range %}
-    {% if page_obj.number == num %}
-      <a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
-    {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-      <a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }}</a>
-    {% endif %}
-  {% endfor %}
-  
-  {% if page_obj.has_next %}
-    <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
-    <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
-  {% endif %}
-  
-  {% endif %}
-  
-  </div>
-
-
-
- {% for book in books %}
-<div class="d-flex justify-content-center">
-  <div class="card mb-3" style="max-width: 540px; min-width: 540px;">
-    <div class= "card-header">
-
-      <div class="d-flex justify-content-start">
-        <h6 class="card-text">{{book.user.username}}</h6>
-      </div>
-      
-      <div class="d-flex justify-content-center">
-        <h6 class="card-text"> <small class="text-muted"> {{book.posted_at}} </small> </h6>
-      </div>
-
-      <div class="d-flex justify-content-end">
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item" href="{% url 'book_edit' book.id %}">Edit</a></li>
-            <li><a class="dropdown-item" href="{% url 'book_delete' book.id %}">Delete</a></li>
-            {% if book.is_visible %}
-            <li><a class="dropdown-item" href="{% url 'book_visibility' book.id %}">Private</a></li>
-            {% else %}
-            <li><a class="dropdown-item" href="{% url 'book_visibility' book.id %}">Public</a></li>
-            {% endif %}
-          </ul>
-        </div>
-      </div>
-
-    </div>
-    <div class="card-body">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="..." class="img-fluid rounded-start" alt="..." />
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">{{book.title}}</h5>
-          {% if book.author %}
-            <h6 class="card-text">{{book.author}}</h6>
-          {% endif %}          <h6 class="card-text">{{book.size}}</h6>
-        </div>
+        <a href="{% url 'logout' %}">Logout </a>
+        <hr>
       </div>
     </div>
   </div>
+
+  <div class="d-flex justify-content-center">
+    <a class="mb-3" href="{% url 'add_book' %}"> Add New Book</a>
   </div>
-</div>
-    {% endfor %}
 
-  {% endif %} 
-
+  {% if not books %}
+    <div class="d-flex justify-content-center">
+      <h4>There is no book in this profile</h4>
+    </div>
   {% else %}
-  <p> You are not logged in</p>
-  <hr>
-   <p> Already have an Account? <a href="{% url 'login' %}">Log In</a></p>
-  <p>Don't have an Account? <a href="{% url 'signup' %}">Sign Up</a></p>
-  {% endif %}
-  
- 
+    {% include '_pagination.html' %}
+    {% include '_post_card.html' %}
+  {% endif %} 
 
 {% endblock content %}

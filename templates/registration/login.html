@@ -5,21 +5,27 @@
 
 {%block content%}
 
-<h2> Log In </h2>
-<div class="content-section">
-    <form method="POST">
-        {% csrf_token %}
-        <fieldset class="form-group">
-            {{ form|crispy }}
-        </fieldset>
-        <div class="form-group">
-            <button class="btn btn-outline-info" type="submit">Login</button>
+<div class="d-flex justify-content-center">
+    <div class="card mb-3 p-2" style="max-width: 540px; min-width: 540px;">
+        <div class="card-header bg-transparent "><h5> Log In </h5></div>  
+        
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="card-body">
+                    <fieldset class="form-group">
+                        {{ form|crispy }}
+                    </fieldset>
+                    <div class="form-group">
+                        <button class="btn btn-outline-info" type="submit">Login</button>
+                    </div>
+                </div>
+                    <div class="card-body form-group">
+                        <small class="text-muted">
+                            Don't have an Account? <a class="ml-2" href="{% url 'signup' %}">Sign Up</a>
+                        </small>
+                    </div>
+            </form>
         </div>
-    </form>
-    <div class="pt-3">
-        <small class="text-muted">
-            Don't have an Account? <a class="ml-2" href="{% url 'signup' %}">Sign Up Now</a>
-        </small>
     </div>
 </div>
 

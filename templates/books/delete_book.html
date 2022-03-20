@@ -1,16 +1,25 @@
 {% extends "_base.html" %}
 {% block content %}
-    <div class="content-section">
-        <form method="POST">
-            {% csrf_token %}
-            <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Delete Post</legend>
-                <h2>Are you sure you want to delete the post "{{ object.title }}"</h2>
-            </fieldset>
-            <div class="form-group">
-                <button class="btn btn-outline-danger" type="submit">Yes, Delete</button>
-                <a class="btn btn-outline-secondary" href="{% url 'book_detail' object.id %}">Cancel</a>
+    <div class="d-flex justify-content-center">
+        <div class="card mb-3 p-2" style="max-width: 540px; min-width: 540px;">
+            <div class="card-header bg-transparent "><h4>Delete Post</h4></div>  
+            
+                <form action="" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="card-body">
+                        <fieldset class="form-group">
+                            <legend class=""></legend>
+                            <h5>Are you sure you want to delete the post "{{ object.title }}"</h5>
+                        </fieldset>
+                    </div>
+                    <div class="card-body form-group">
+                        <button class="btn btn-outline-danger" type="submit">Yes, Delete</button>
+                        <a class="btn btn-outline-secondary" href="{% url 'my_profile' %}">Cancel</a>
+                    </div>
+                </form>
             </div>
-        </form>
+        </div>
     </div>
+    
+
 {% endblock content %}

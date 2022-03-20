@@ -1,0 +1,14 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block title %} Favorite Books{% endblock title %}
+
+{% block content %}
+{% if not books %}
+<div class="d-flex justify-content-center">
+  <h4>There is no favorite book</h4>
+ </div>
+{% else %}
+  {% include '_post_card.html' %}
+{% endif %}
+{% endblock content %}
