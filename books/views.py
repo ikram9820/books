@@ -1,14 +1,10 @@
 from django.shortcuts import get_object_or_404, redirect,render
-from django.views.generic import ListView,DetailView,DeleteView,UpdateView,CreateView
+from django.views.generic import ListView,DeleteView,UpdateView,CreateView
 from django.db.models import Q
 from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin,UserPassesTestMixin
 from .models import Book,Favorite,FavoriteBook
 from django.urls import reverse_lazy
-import mimetypes
-import os
-from django.http.response import HttpResponse
-
 
 
 
@@ -19,7 +15,7 @@ class BookListView(ListView):
     paginate_by=2
 
     def get_queryset(self):
-        return Book.objects.filter(is_visible=True).order_by('-posted_at')
+        return Book.objects.filter(is_visible=True).order_by('-posted_at').select_related('user')
 
 class BookCreateView(LoginRequiredMixin,CreateView):
     model= Book
@@ -80,7 +76,7 @@ def get_fav_book_list(request):
     # if request.user.is_authenticated:
     #     fav_books=FavoriteBook.objects.filter(favorite=fav).only('book')
     # else:
-    fav_books=FavoriteBook.objects.filter(favorite=fav).only('book')
+    fav_books=FavoriteBook.objects.filter(favorite=fav).only('book').select_related('book__user')
     books=[]
     for fav_book in fav_books:
         books.append(fav_book.book)
@@ -113,7 +109,7 @@ class ProfileListView(ListView):
 
     def get_queryset(self):
         user= get_object_or_404(get_user_model(), username= self.kwargs.get('username'))
-        return Book.objects.filter(Q(user=user)& Q(is_visible=True)).order_by('-posted_at')
+        return Book.objects.filter(Q(user=user) & Q(is_visible=True)).order_by('-posted_at').select_related('user')
 
 class MyProfileListView(LoginRequiredMixin,ListView):
     model=Book
@@ -126,7 +122,7 @@ class MyProfileListView(LoginRequiredMixin,ListView):
         else:
             user= None
 
-        return Book.objects.filter(user=user).order_by('-posted_at')
+        return Book.objects.filter(user=user).order_by('-posted_at').select_related('user')
     
 class SearchResultsListView(ListView):
     model= Book
@@ -134,7 +130,7 @@ class SearchResultsListView(ListView):
     tempalte_name='books/search_results.html'   
     def get_queryset(self):
         query= self.request.GET.get('q')
-        return Book.objects.filter(Q(title__icontains=query) & Q(is_visible=True)).order_by('-posted_at')
+        return Book.objects.filter(Q(title__icontains=query) & Q(is_visible=True)).order_by('-posted_at').select_related('user')
 
 
 

@@ -1,18 +1,16 @@
-from django.conf import settings
 from django.db import models
 from django.urls import reverse
 from django.contrib.auth import get_user_model
-from django.core.validators import MinValueValidator,MaxValueValidator
+from django.core.validators import FileExtensionValidator
 import uuid
-import os
 import PyPDF2
+from books.validators import validate_pdf_size
 
 class Book(models.Model):
     id= models.UUIDField(primary_key=True,default= uuid.uuid4,editable= False)
     title= models.CharField(max_length=200)
     author= models.CharField(max_length=200,blank=True ,null=True)
-    pdf= models.FileField(upload_to=f'book/pdfs/')
-    cover=models.ImageField(upload_to=f'book/covers/',blank=True ,null=True)
+    pdf= models.FileField(upload_to=f'book/pdfs/',validators=[validate_pdf_size,FileExtensionValidator(allowed_extensions=['pdf'])])
     posted_at= models.DateTimeField(auto_now_add=True)
     is_visible= models.BooleanField(default=True)
     download_count= models.IntegerField(default=0)
@@ -34,7 +32,10 @@ class Book(models.Model):
     def pages(self):
         url= '.'+self.pdf.url
         with open(url,'rb') as pdf:
-            reder= PyPDF2.PdfFileReader(pdf)
+            try:
+                reder= PyPDF2.PdfFileReader(pdf)
+            except :
+                return None
             return reder.numPages
 
 

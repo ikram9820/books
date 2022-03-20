@@ -47,9 +47,10 @@
               {% if book.author %}
                 <h6 class="card-text">  {{book.author}} </h6>
               {% endif %} 
+              {% if book.pages %}
+                <h6 class="card-text"> <small class="text-muted">pages: {{book.pages}} </small> </h6>
+              {% endif %}
               
-            <h6 class="card-text"> <small class="text-muted">pages: {{book.pages}} </small> </h6>
-      
               <h6 class="card-text"> <a href="{{book.pdf.url}}" download class= "btn btn-success bi bi-download">     {{book.size}} </a> </h6>
           </div>
         </div>
