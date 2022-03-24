@@ -13,9 +13,8 @@
  </div>
 {% else %}
 <div class="d-flex justify-content-center">
-<form class="form-inline mt-2 mb-2 mt-md-0" action="{% url 'search_results' %}" method= 'get'>
-  
-    <input name='q' class="form-control mr-sm-2"  style="max-width: 540px; min-width: 540px; "  type="text" placeholder='Search' aria-label='Search'>
+<form class="form-inline mt-2 mb-2 mt-md-0 w-100 " action="{% url 'search_results' %}" method= 'get'>
+    <input name='q' class="form-control mr-sm-2"  "  type="text" placeholder='Search' aria-label='Search'>
 </form>
 </div>
 

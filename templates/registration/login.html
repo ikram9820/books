@@ -6,7 +6,7 @@
 {%block content%}
 
 <div class="d-flex justify-content-center">
-    <div class="card mb-3 p-2" style="max-width: 540px; min-width: 540px;">
+    <div class="card mb-3 p-2 w-100">
         <div class="card-header bg-transparent "><h5> Log In </h5></div>  
         
             <form action="" method="POST" enctype="multipart/form-data">
@@ -16,7 +16,7 @@
                         {{ form|crispy }}
                     </fieldset>
                     <div class="form-group">
-                        <button class="btn btn-outline-primary" type="submit">Login</button>
+                        <button class="btn btn-primary" type="submit">Login</button>
                     </div>
                 </div>
                     <div class="card-body form-group">

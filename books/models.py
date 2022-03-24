@@ -2,8 +2,10 @@ from django.db import models
 from django.urls import reverse
 from django.contrib.auth import get_user_model
 from django.core.validators import FileExtensionValidator
+from config.settings import MEDIA_ROOT
 import uuid
 import PyPDF2
+import fitz
 from books.validators import validate_pdf_size
 
 class Book(models.Model):
@@ -29,14 +31,26 @@ class Book(models.Model):
             return f"{'{:.2f}'.format(size)} bytes"
 
     @property
+    def cover(self):
+        url= '.'+self.pdf.url
+        pdf= fitz.open(url)
+        page=pdf.loadPage(0)
+        image= page.get_pixmap()
+        name=f"{self.title} {self.id}.png"
+        # name=name.replace(' ','-')
+        image.save(f"static/images/{name}")
+        return name
+
+
+    @property
     def pages(self):
         url= '.'+self.pdf.url
         with open(url,'rb') as pdf:
             try:
-                reder= PyPDF2.PdfFileReader(pdf)
+                reader= PyPDF2.PdfFileReader(pdf)
             except :
                 return None
-            return reder.numPages
+            return reader.numPages
 
 
     def __str__(self):

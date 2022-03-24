@@ -1,7 +1,7 @@
 {% load static %}
 {% for book in books %}
 <div class="d-flex justify-content-center">
-    <div class="card mb-3" style="max-width: 540px; min-width: 540px;">
+    <div class="card mb-3 w-100" >
       
       <div class= "card-header">
         <div class="row">
@@ -38,11 +38,12 @@
       <div class="card-body">
         <div class="row g-0">
           <div class="col-4">
-            <embed src="{{book.pdf.url}}" width="150px" height="170px" alt="{{book.pdf.url}}" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html"/>
-
+           
+            <img  class="w-75" src=" {% static 'images/'%}{{book.cover}}" />
+           
           </div>
           <div class="col-8">       
-              
+          
               <h5 class="card-text" >{{book.title}}</h5>
               {% if book.author %}
                 <h6 class="card-text">  {{book.author}} </h6>
@@ -52,6 +53,7 @@
               {% endif %}
               
               <h6 class="card-text"> <a href="{{book.pdf.url}}" download class= "btn btn-success bi bi-download">     {{book.size}} </a> </h6>
+      
           </div>
         </div>
       </div>
