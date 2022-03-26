@@ -1,26 +1,17 @@
 from pathlib import Path
+import os
 
-BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-6j2@8g)ygvsiuvnh1w8cs&o)k*o!l_t5j5jskw0ecs($*1s1*r'
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
-DEBUG = True
 
-ALLOWED_HOSTS = []
 
-X_FRAME_OPTIONS = 'ALLOWALL'
-XS_SHARING_ALLOWED_METHODS = ['POST','GET','OPTIONS', 'PUT', 'DELETE']
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS= (str(BASE_DIR.joinpath('static')),)
-STATIC_ROOT= str(BASE_DIR.joinpath('staticfiles'))
-STATICFILES_FINDERS= [
-    "django.contrib.staticfiles.finders.FileSystemFinder",
-    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
-]
+STATIC_ROOT= os.path.join(BASE_DIR,'static')
 
 MEDIA_URL= '/media/'
-MEDIA_ROOT= str(BASE_DIR.joinpath('media'))
+MEDIA_ROOT= os.path.join(BASE_DIR,'media')
 
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
@@ -29,7 +20,7 @@ CRISPY_TEMPLATE_PACK= 'bootstrap5'
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
-LOGIN_REDIRECT_URL= 'book_list'
+LOGIN_REDIRECT_URL= 'my_profile'
 LOGOUT_REDIRECT_URL='book_list'
 
 INTERNAL_IPS = [
@@ -37,6 +28,8 @@ INTERNAL_IPS = [
     "127.0.0.1",
     # ...
 ]
+
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -90,18 +83,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
-# Database
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'books',
-        'PASSWORD':'root',
-        'USER':'root',
-        'HOST':'localhost',
-        'PORT': '3306'
-
-        }
-}
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [

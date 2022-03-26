@@ -1,6 +1,7 @@
 *.pyc
 /media/
+/staticfiles/
 /static/
-general.log
+/general.log/
 /docker_compose.yml/
 /Dockerfile/

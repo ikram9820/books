@@ -13,6 +13,9 @@ crispy-bootstrap5 = "*"
 django-debug-toolbar = "*"
 pypdf2 = "*"
 pymupdf = "*"
+gunicorn = "*"
+environs = "*"
+whitenoise = "*"
 
 [dev-packages]
 

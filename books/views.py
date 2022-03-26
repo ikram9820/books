@@ -12,7 +12,7 @@ class BookListView(ListView):
     model= Book
     template_name= 'books/book_list.html'
     context_object_name= 'books'
-    paginate_by=2
+    paginate_by=10
 
     def get_queryset(self):
         return Book.objects.filter(is_visible=True).order_by('-posted_at').select_related('user')
@@ -100,7 +100,7 @@ class ProfileListView(ListView):
     model=Book
     template_name='profile/profile.html'
     context_object_name='books'
-    paginate_by=2
+    paginate_by=10
 
     def get_context_data(self, **kwargs):
         context= super(ProfileListView,self).get_context_data(**kwargs)
@@ -115,7 +115,7 @@ class MyProfileListView(LoginRequiredMixin,ListView):
     model=Book
     template_name='profile/my_profile.html'
     context_object_name='books'
-    paginate_by=2
+    paginate_by=10
     def get_queryset(self):
         if self.request.user.is_authenticated:
             user=self.request.user

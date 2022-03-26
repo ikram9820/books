@@ -2,7 +2,7 @@ from django.db import models
 from django.urls import reverse
 from django.contrib.auth import get_user_model
 from django.core.validators import FileExtensionValidator
-from config.settings import MEDIA_ROOT
+from config.settings.common import MEDIA_ROOT
 import uuid
 import PyPDF2
 import fitz
@@ -12,11 +12,42 @@ class Book(models.Model):
     id= models.UUIDField(primary_key=True,default= uuid.uuid4,editable= False)
     title= models.CharField(max_length=200)
     author= models.CharField(max_length=200,blank=True ,null=True)
-    pdf= models.FileField(upload_to=f'book/pdfs/',validators=[validate_pdf_size,FileExtensionValidator(allowed_extensions=['pdf'])])
+    pdf= models.FileField(upload_to="book/pdfs",validators=[validate_pdf_size,FileExtensionValidator(allowed_extensions=['pdf'])])
     posted_at= models.DateTimeField(auto_now_add=True)
     is_visible= models.BooleanField(default=True)
     download_count= models.IntegerField(default=0)
     user= models.ForeignKey(get_user_model(),on_delete=models.PROTECT,related_name='book')
+
+    def save(self,*args,**kwargs ):
+        self.title= str(self.title).title()
+        return super(Book,self).save(*args,**kwargs)
+
+    @property
+    def cover(self):
+        url= '.'+self.pdf.url
+        pdf= fitz.open(url)
+        page=pdf.loadPage(0)
+        image= page.get_pixmap()
+        name=f"{self.title}.png"
+        name=name.replace(' ','-')
+        image.save(f"static/images/{name}")
+        return name
+
+    @property
+    def pages(self):
+        url= '.'+self.pdf.url
+        file = open(url, 'rb')
+        readpdf = PyPDF2.PdfFileReader(file)
+        return readpdf.numPages
+
+    # @property       
+    # def pages(self):
+    #     output = check_output(["pdfinfo", self.pdf.url]).decode()
+    #     pages_line = [line for line in output.splitlines() if "Pages:" in line][0]
+    #     num_pages = int(pages_line.split(":")[1])
+    #     return num_pages
+
+
 
     @property
     def size(self):
@@ -28,30 +59,7 @@ class Book(models.Model):
         elif size > kb:
             return f"{'{:.2f}'.format(size/kb)} kb"
         else:
-            return f"{'{:.2f}'.format(size)} bytes"
-
-    @property
-    def cover(self):
-        url= '.'+self.pdf.url
-        pdf= fitz.open(url)
-        page=pdf.loadPage(0)
-        image= page.get_pixmap()
-        name=f"{self.title} {self.id}.png"
-        # name=name.replace(' ','-')
-        image.save(f"static/images/{name}")
-        return name
-
-
-    @property
-    def pages(self):
-        url= '.'+self.pdf.url
-        with open(url,'rb') as pdf:
-            try:
-                reader= PyPDF2.PdfFileReader(pdf)
-            except :
-                return None
-            return reader.numPages
-
+            return f"{'{:.2f}'.format(size)} bytes"   
 
     def __str__(self):
         return self.title
