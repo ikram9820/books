@@ -2,10 +2,10 @@ from django.db import models
 from django.urls import reverse
 from django.contrib.auth import get_user_model
 from django.core.validators import FileExtensionValidator
-from config.settings.common import MEDIA_ROOT
 import uuid
 import PyPDF2
 import fitz
+from config.settings import common
 from books.validators import validate_pdf_size
 
 class Book(models.Model):
@@ -30,15 +30,19 @@ class Book(models.Model):
         image= page.get_pixmap()
         name=f"{self.title}.png"
         name=name.replace(' ','-')
-        image.save(f"static/images/{name}")
-        return name
+        image.save(f"media/book/covers/{name}")
+        url= common.MEDIA_URL+f"book/covers/{name}"
+        return url
 
     @property
     def pages(self):
         url= '.'+self.pdf.url
         file = open(url, 'rb')
-        readpdf = PyPDF2.PdfFileReader(file)
-        return readpdf.numPages
+        try:
+            readpdf = PyPDF2.PdfFileReader(file)
+            return readpdf.numPages
+        except :
+            return 0
 
     # @property       
     # def pages(self):

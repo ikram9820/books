@@ -39,12 +39,12 @@
         <div class="row g-0">
           <div class="col-4">
            
-            <img  class="w-75" src=" {% static 'images/'%}{{book.cover}}" />
+            <img  class="w-75" src="{{book.cover}}" />
            
           </div>
           <div class="col-8">       
           
-              <h5 class="card-text" >{{book.title}}</h5>
+              <h5 class=" card-text" >{{book.title}}</h5>
               {% if book.author %}
                 <h6 class="card-text">  {{book.author}} </h6>
               {% endif %} 

@@ -6,11 +6,11 @@
  <div class="d-flex justify-content-center">
 
   <div class="mb-3 w-100"  >
-    <div class="card-header bg-transparent "><h3>{{user.username}}</h3></div>
+    <div class="card-header bg-transparent "><h3>{{profile_user.username}}</h3></div>
     <div class="card-body">
       <p class="card-text">  
-        {% if user.bio %}
-        {{user.bio}}
+        {% if profile_user.bio %}
+        {{profile_user.bio}}
         <br>
         {% endif %}
       </p>

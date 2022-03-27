@@ -13,7 +13,6 @@ STATIC_ROOT= os.path.join(BASE_DIR,'static')
 MEDIA_URL= '/media/'
 MEDIA_ROOT= os.path.join(BASE_DIR,'media')
 
-
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK= 'bootstrap5'
 
@@ -37,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'whitenoise.runserver_nostatic', 
     'django.contrib.staticfiles',
 
     'crispy_forms',
