@@ -8,8 +8,11 @@ env.read_env()
 DEBUG = False
 SECRET_KEY = os.environ['SECRET_KEY']
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['bookishpdf-prod.herokuapp.com']
 
+DATABASES = {
+    "default": env.dj_db_url("DATABASE_URL")
+}
 
 CACHE_MIDDLEWARE_ALIAS = 'default'
 CACHE_MIDDLEWARE_SECONDS = 604800
