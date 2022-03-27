@@ -9,4 +9,4 @@ urlpatterns = [
     path('accounts/',include('accounts.urls')),
     path('__debug__/', include('debug_toolbar.urls')),
     path('',include('books.urls')),
-] + static(settings.common.MEDIA_URL, document_root= settings.common.MEDIA_ROOT)
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)+ static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)
