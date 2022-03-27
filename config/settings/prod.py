@@ -9,7 +9,7 @@ env.read_env()
 DEBUG = False
 SECRET_KEY = os.environ['SECRET_KEY']
 
-ALLOWED_HOSTS = ['bookishpdf-prod.herokuapp.com']
+ALLOWED_HOSTS = ['bookishpdf-prod.herokuapp.com','localhost']
 
 DATABASES = {
     "default": dj_database_url.config()
