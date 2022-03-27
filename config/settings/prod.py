@@ -1,5 +1,6 @@
 from .common import *
 from environs import Env
+import dj_database_url
 
 env = Env()
 env.read_env()
@@ -11,7 +12,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 ALLOWED_HOSTS = ['bookishpdf-prod.herokuapp.com']
 
 DATABASES = {
-    "default": env.dj_db_url("DATABASE_URL")
+    "default": dj_database_url.config()
 }
 
 CACHE_MIDDLEWARE_ALIAS = 'default'

@@ -16,6 +16,7 @@ pymupdf = "*"
 gunicorn = "*"
 environs = "*"
 whitenoise = "*"
+dj-database-url = "*"
 
 [dev-packages]
 
