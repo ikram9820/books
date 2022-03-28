@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'whitenoise.runserver_nostatic', 
+    # 'whitenoise.runserver_nostatic', 
     'django.contrib.staticfiles',
 
     'crispy_forms',
