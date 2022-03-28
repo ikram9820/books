@@ -24,14 +24,15 @@ class Book(models.Model):
 
     @property
     def cover(self):
-        url= '.'+self.pdf.url
+        url= self.pdf.url
         pdf= fitz.open(url)
+        print(self.pdf.url)
         page=pdf.loadPage(0)
         image= page.get_pixmap()
         name=f"{self.title}.png"
         name=name.replace(' ','-')
-        image.save(f"media/book/covers/{name}")
-        url= common.MEDIA_URL+f"book/covers/{name}"
+        url= f"media/book/covers/{name}"
+        image.save(url)
         return url
 
     @property
