@@ -1,0 +1,1158 @@
+Watching for file changes with StatReloader
+Not Found: /favicon.ico/
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+TypeError: 'Book' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\template\backends\django.py", line 62, in render
+    return self.template.render(context)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\test\utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\template\base.py", line 958, in render_annotated
+    return self.render(context)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\test\utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\template\base.py", line 958, in render_annotated
+    return self.render(context)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\template\base.py", line 958, in render_annotated
+    return self.render(context)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\template\defaulttags.py", line 322, in render
+    return nodelist.render(context)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\template\base.py", line 958, in render_annotated
+    return self.render(context)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\template\loader_tags.py", line 208, in render
+    return template.render(context)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\template\base.py", line 177, in render
+    return self._render(context)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\test\utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\template\base.py", line 958, in render_annotated
+    return self.render(context)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\template\defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\template\base.py", line 958, in render_annotated
+    return self.render(context)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\template\base.py", line 1059, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\template\base.py", line 712, in resolve
+    obj = self.var.resolve(context)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\template\base.py", line 842, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+  File "C:\Users\HP\Desktop\projects\books\books\models.py", line 28, in cover
+    pdf= fitz.open(url)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\fitz\fitz.py", line 3990, in __init__
+    raise FileNotFoundError(msg)
+fitz.fitz.FileNotFoundError: no such file: '/media/book/pdfs/Data_Structures_and_Algorithms_in_Java_5Pvzvsd.pdf'
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Internal Server Error: /static/debug_toolbar/css/toolbar.css
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/debug_toolbar/js/toolbar.js
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/debug_toolbar/css/print.css
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Not Found: /favicon.ico/
+Internal Server Error: /static/debug_toolbar/css/print.css
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/debug_toolbar/css/toolbar.css
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+C:\Users\HP\Desktop\projects\books\config\settings\common.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\config\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\config\settings\common.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\config\settings\common.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /create/
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\generic\base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\generic\base.py", line 119, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\generic\edit.py", line 184, in post
+    return super().post(request, *args, **kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\generic\edit.py", line 153, in post
+    return self.form_valid(form)
+  File "C:\Users\HP\Desktop\projects\books\books\views.py", line 27, in form_valid
+    return super().form_valid(form)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\generic\edit.py", line 135, in form_valid
+    self.object = form.save()
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\forms\models.py", line 548, in save
+    self.instance.save()
+  File "C:\Users\HP\Desktop\projects\books\books\models.py", line 48, in save
+    self.cover_url= cover(self)
+  File "C:\Users\HP\Desktop\projects\books\books\models.py", line 14, in cover
+    pdf= fitz.open(url)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\fitz\fitz.py", line 3990, in __init__
+    raise FileNotFoundError(msg)
+fitz.fitz.FileNotFoundError: no such file: '/media/The%20Lean%20Startup.pdf'
+Not Found: //anything-but-admin/books/book/
+Internal Server Error: /static/admin/css/nav_sidebar.css
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/admin/css/responsive.css
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/admin/css/base.css
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/admin/css/login.css
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/admin/js/nav_sidebar.js
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/admin/css/login.css
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/admin/css/nav_sidebar.css
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/admin/css/responsive.css
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/admin/css/base.css
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/admin/css/nav_sidebar.css
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/admin/css/base.css
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/admin/css/responsive.css
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/admin/css/login.css
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/admin/js/nav_sidebar.js
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/admin/css/base.css
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/admin/css/nav_sidebar.css
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/admin/css/responsive.css
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/admin/css/dashboard.css
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/admin/js/nav_sidebar.js
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/admin/css/base.css
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/admin/js/jquery.init.js
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/admin/css/responsive.css
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/admin/css/changelists.css
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/admin/css/nav_sidebar.css
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/admin/js/core.js
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/admin/js/urlify.js
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/admin/js/admin/RelatedObjectLookups.js
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/admin/js/actions.js
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/admin/js/prepopulate.js
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/admin/js/vendor/xregexp/xregexp.js
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/admin/js/vendor/jquery/jquery.js
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/admin/js/nav_sidebar.js
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/admin/css/responsive.css
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/admin/css/base.css
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/admin/css/changelists.css
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/admin/js/core.js
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/admin/js/admin/RelatedObjectLookups.js
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/admin/css/nav_sidebar.css
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/admin/js/vendor/jquery/jquery.js
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/admin/css/responsive.css
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/admin/js/jquery.init.js
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/admin/js/actions.js
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/admin/js/urlify.js
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/admin/js/prepopulate.js
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/admin/js/vendor/xregexp/xregexp.js
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/admin/js/nav_sidebar.js
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/admin/css/responsive.css
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Internal Server Error: /static/admin/img/search.svg
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+C:\Users\HP\Desktop\projects\books\config\settings\common.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\config\settings\common.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\config\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Forbidden (CSRF token from POST incorrect.): /create/
+Internal Server Error: /create/
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\generic\base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\generic\base.py", line 119, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\generic\edit.py", line 184, in post
+    return super().post(request, *args, **kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\generic\edit.py", line 153, in post
+    return self.form_valid(form)
+  File "C:\Users\HP\Desktop\projects\books\books\views.py", line 27, in form_valid
+    return super().form_valid(form)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\generic\edit.py", line 135, in form_valid
+    self.object = form.save()
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\forms\models.py", line 548, in save
+    self.instance.save()
+  File "C:\Users\HP\Desktop\projects\books\books\models.py", line 48, in save
+    self.cover_url= cover(self)
+  File "C:\Users\HP\Desktop\projects\books\books\models.py", line 14, in cover
+    pdf= fitz.open(url)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\fitz\fitz.py", line 3990, in __init__
+    raise FileNotFoundError(msg)
+fitz.fitz.FileNotFoundError: no such file: '/media/The%20Lean%20Startup.pdf'
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /create/
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\generic\base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\generic\base.py", line 119, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\generic\edit.py", line 184, in post
+    return super().post(request, *args, **kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\generic\edit.py", line 153, in post
+    return self.form_valid(form)
+  File "C:\Users\HP\Desktop\projects\books\books\views.py", line 27, in form_valid
+    return super().form_valid(form)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\generic\edit.py", line 135, in form_valid
+    self.object = form.save()
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\forms\models.py", line 548, in save
+    self.instance.save()
+  File "C:\Users\HP\Desktop\projects\books\books\models.py", line 46, in save
+    self.cover_url= cover(self.pdf.url,self.title)
+  File "C:\Users\HP\Desktop\projects\books\books\models.py", line 13, in cover
+    pdf= fitz.open(url)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\fitz\fitz.py", line 3990, in __init__
+    raise FileNotFoundError(msg)
+fitz.fitz.FileNotFoundError: no such file: '/media/The%20Lean%20Startup.pdf'
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /create/
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\generic\base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\generic\base.py", line 119, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\generic\edit.py", line 184, in post
+    return super().post(request, *args, **kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\generic\edit.py", line 153, in post
+    return self.form_valid(form)
+  File "C:\Users\HP\Desktop\projects\books\books\views.py", line 27, in form_valid
+    return super().form_valid(form)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\generic\edit.py", line 135, in form_valid
+    self.object = form.save()
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\forms\models.py", line 548, in save
+    self.instance.save()
+  File "C:\Users\HP\Desktop\projects\books\books\models.py", line 47, in save
+    self.cover_url= cover(self.pdf.url,self.title)
+  File "C:\Users\HP\Desktop\projects\books\books\models.py", line 13, in cover
+    pdf= fitz.open(url)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\fitz\fitz.py", line 3990, in __init__
+    raise FileNotFoundError(msg)
+fitz.fitz.FileNotFoundError: no such file: '/media/book/pdfs/The_Lean_Startup.pdf'
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /profile/None
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /3715a137-c2e3-4359-a310-78b3ece6c58f/delete/
+Not Found: /profile/None
+Not Found: /profile/None
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /profile/None
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /create/
+Traceback (most recent call last):
+  File "C:\Users\HP\Desktop\projects\books\books\models.py", line 49, in save
+    self.cover_url= cover(self.pdf.url,self.title)
+  File "C:\Users\HP\Desktop\projects\books\books\models.py", line 13, in cover
+    pdf= fitz.open(url)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\fitz\fitz.py", line 3990, in __init__
+    raise FileNotFoundError(msg)
+fitz.fitz.FileNotFoundError: no such file: '/media/book/pdfs/Amir_Baap_G_B.pdf'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\generic\base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\generic\base.py", line 119, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\generic\edit.py", line 184, in post
+    return super().post(request, *args, **kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\generic\edit.py", line 153, in post
+    return self.form_valid(form)
+  File "C:\Users\HP\Desktop\projects\books\books\views.py", line 27, in form_valid
+    return super().form_valid(form)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\generic\edit.py", line 135, in form_valid
+    self.object = form.save()
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\forms\models.py", line 548, in save
+    self.instance.save()
+  File "C:\Users\HP\Desktop\projects\books\books\models.py", line 51, in save
+    print("this the error in book model "+e)
+TypeError: can only concatenate str (not "FileNotFoundError") to str
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /profile/None
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /profile/media/book/covers/Algo.png
+Not Found: /profile/media/book/covers/Algo.png
+Not Found: /profile/media/book/covers/Algo.png
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\books\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\projects\books\config\settings\common.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /favicon.ico/
+Internal Server Error: /static/admin/css/login.css
+Traceback (most recent call last):
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\views\static.py", line 35, in serve
+    fullpath = Path(safe_join(document_root, path))
+  File "C:\Users\HP\.virtualenvs\books--bXnkLlY\lib\site-packages\django\utils\_os.py", line 17, in safe_join
+    final_path = abspath(join(base, *paths))
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+C:\Users\HP\Desktop\projects\books\config\settings\common.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
