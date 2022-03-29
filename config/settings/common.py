@@ -5,26 +5,24 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 
-
-
 STATIC_URL = '/static/'
-
+STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
 STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 ]
 
-MEDIA_URL= '/media/'
-MEDIA_ROOT= os.path.join(BASE_DIR,'media')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
-CRISPY_TEMPLATE_PACK= 'bootstrap5'
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
-LOGIN_REDIRECT_URL= 'my_profile'
-LOGOUT_REDIRECT_URL='book_list'
+LOGIN_REDIRECT_URL = 'my_profile'
+LOGOUT_REDIRECT_URL = 'book_list'
 
 INTERNAL_IPS = [
     # ...
@@ -33,14 +31,13 @@ INTERNAL_IPS = [
 ]
 
 
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'whitenoise.runserver_nostatic', 
+    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
 
     'crispy_forms',
@@ -52,11 +49,8 @@ INSTALLED_APPS = [
 ]
 
 
-
-
-
 MIDDLEWARE = [
-    
+
     "debug_toolbar.middleware.DebugToolbarMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -119,28 +113,28 @@ USE_TZ = True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGGING={
-    'version':1,
-    'disable_existing_loggers':False,
-    'handlers':{
-        'console':{
-            'class':'logging.StreamHandler',
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
 
         },
-        'file':{
-            'class':'logging.FileHandler',
-            'filename':'general.log'
+        'file': {
+            'class': 'logging.FileHandler',
+            'filename': 'general.log'
         },
 
     },
-    'loggers':{
-        '':{
-            'handlers':['console','file'],
-            'level':os.environ.get('DJANGO_LOG_LEVEL','INFO')
+    'loggers': {
+        '': {
+            'handlers': ['console', 'file'],
+            'level': os.environ.get('DJANGO_LOG_LEVEL', 'INFO')
         },
-        'formatters':{
-            'verbose':{
-                'formate':'{asctime} ({levelname}) - {name} -{message}',
+        'formatters': {
+            'verbose': {
+                'formate': '{asctime} ({levelname}) - {name} -{message}',
                 'style': '{'
             }
         }

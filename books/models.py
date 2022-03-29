@@ -5,8 +5,31 @@ from django.core.validators import FileExtensionValidator
 import uuid
 import PyPDF2
 import fitz
-from config.settings import common
 from books.validators import validate_pdf_size
+
+
+def cover(url,title):
+    url= '.'+url
+    with fitz.open(url) as pdf:
+        page=pdf.loadPage(0)
+        image= page.get_pixmap()
+        name=f"{title}.png"
+        name=name.replace(' ','-')
+        url= f"media/book/covers/{name}"
+        image.save(url)
+        return url
+
+    
+def pages(url):
+    url= '.'+url
+    file = open(url, 'rb')
+    try:
+        readpdf = PyPDF2.PdfFileReader(file)
+        return readpdf.numPages
+    except :
+        return 0
+
+
 
 class Book(models.Model):
     id= models.UUIDField(primary_key=True,default= uuid.uuid4,editable= False)
@@ -15,44 +38,25 @@ class Book(models.Model):
     pdf= models.FileField(upload_to="book/pdfs",validators=[validate_pdf_size,FileExtensionValidator(allowed_extensions=['pdf'])])
     posted_at= models.DateTimeField(auto_now_add=True)
     is_visible= models.BooleanField(default=True)
+    pages=models.IntegerField(null=True,blank=True)
+    cover_url=models.CharField(max_length=220,null=True,blank=True)
     download_count= models.IntegerField(default=0)
     user= models.ForeignKey(get_user_model(),on_delete=models.PROTECT,related_name='book')
 
     def save(self,*args,**kwargs ):
         self.title= str(self.title).title()
-        return super(Book,self).save(*args,**kwargs)
-
-    @property
-    def cover(self):
-        url= self.pdf.url
-        pdf= fitz.open(url)
-        print(self.pdf.url)
-        page=pdf.loadPage(0)
-        image= page.get_pixmap()
-        name=f"{self.title}.png"
-        name=name.replace(' ','-')
-        url= f"media/book/covers/{name}"
-        image.save(url)
-        return url
-
-    @property
-    def pages(self):
-        url= '.'+self.pdf.url
-        file = open(url, 'rb')
+        super(Book,self).save(*args,**kwargs)
         try:
-            readpdf = PyPDF2.PdfFileReader(file)
-            return readpdf.numPages
-        except :
-            return 0
-
-    # @property       
-    # def pages(self):
-    #     output = check_output(["pdfinfo", self.pdf.url]).decode()
-    #     pages_line = [line for line in output.splitlines() if "Pages:" in line][0]
-    #     num_pages = int(pages_line.split(":")[1])
-    #     return num_pages
-
-
+            if not self.cover_url:
+                self.cover_url= cover(self.pdf.url,self.title)
+            if not self.pages:
+                self.pages=pages(self.pdf.url)
+        except Exception as e :
+            print("this the error in book model "+str(e))
+            book= Book.objects.get(id =self.id)
+            book.delete()
+            return
+        return super(Book,self).save(*args,**kwargs) 
 
     @property
     def size(self):
