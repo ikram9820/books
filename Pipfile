@@ -5,7 +5,6 @@ name = "pypi"
 
 [packages]
 django = "*"
-mysqlclient = "*"
 django-crispy-forms = "*"
 django-allauth = "*"
 pillow = "*"
