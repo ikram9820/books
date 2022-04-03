@@ -62,7 +62,10 @@ class Book(models.Model):
     def size(self):
         mb=1024*1024
         kb=1024
-        size=self.pdf.size
+        try:
+            size=self.pdf.size
+        except :
+            return
         if size > mb:
             return f"{'{:.2f}'.format(size/mb)} mb"
         elif size > kb:
@@ -71,10 +74,16 @@ class Book(models.Model):
             return f"{'{:.2f}'.format(size)} bytes"   
 
     def __str__(self):
-        return self.title
+        try:
+            return self.title
+        except:
+            return
 
     def get_absolute_url(self):
-        return reverse("book_detail", args=[str(self.id)])
+        try:
+            return reverse("book_detail", args=[str(self.id)])
+        except:
+            return
 
 
 class Store(models.Model):
