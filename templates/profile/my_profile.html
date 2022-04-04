@@ -21,16 +21,16 @@
         </p>
       </div>
       <div class="card-footer bg-transparent">
-        <a href="{% url 'edit_profile' user.id %}" > Edit profile </a>
+        <a class="btn btn-primary" href="{% url 'edit_profile' user.id %}" > Edit profile </a>
         <br>
-        <a href="{% url 'logout' %}">Logout </a>
+        <a  class="btn btn-danger mt-1" href="{% url 'logout' %}">Logout </a>
         <hr>
       </div>
     </div>
   </div>
 
   <div class="d-flex justify-content-center">
-    <a class="mb-3" href="{% url 'add_book' %}"> Add New Book</a>
+    <a class="btn btn-light mb-3" href="{% url 'add_book' %}"> Add New Book</a>
   </div>
 
   {% if not books %}

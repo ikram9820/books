@@ -6,16 +6,20 @@
       <div class= "card-header">
         <div class="row">
           <div class=" col-4 d-flex justify-content-start">
-            <h5 class="card-text text-truncate"><a href="{% url 'user_profile' book.user.username %}" >{{book.user.username}}</a></h5>
+            
+            <h5 class="card-text text-truncate" ><a style="text-decoration:none;" href=" {% if not book.user == user %} {% url 'user_profile' book.user.username %} 
+                 {% else %} {% url 'my_profile' %} {% endif %} "  >{{book.user.username}}</a></h5>
+           
+              
           </div>
     
           <div class="col-4 d-flex justify-content-center">
-            <h6 class="card-text"> <small class="text-muted"> {{book.posted_at|date:"d/F/Y"}} </small> </h6>
+            <h6 class="card-text"> <small class="text-muted"> {{book.posted_at|date:"d/b/Y"}} </small> </h6>
           </div>
     
           <div class="col-4 d-flex justify-content-end">
             {% if book.user == user %}
-            <div class="dropdown">
+            <div class="pe-2 dropdown">
               <i class="bi bi-three-dots-vertical" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
               </i>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -28,9 +32,8 @@
                 {% endif %}
               </ul>
             </div>
-            {% else %}
-            <a href="{% url 'add_book_to_fav' book.id %}" class= "bi bi-heart link-dark"> </a>
             {% endif %}
+            <a href="{% url 'add_book_to_fav' book.id %}" class= "bi bi-heart link-dark"> </a>
           </div>
         </div>
       </div>
