@@ -9,29 +9,29 @@
 {%endblock title %}
 
 {% block content %}
-  <div class="d-flex justify-content-center">
-    <div class="mb-3 w-100">
-      <div class="card-header bg-transparent "><h3>{{user.username}}</h3></div>
-      <div class="card-body">
-        <p class="card-text">  
-          {% if user.bio %}
-          {{user.bio}}
-          <br>
-          {% endif %}
-        </p>
-      </div>
-      <div class="card-footer bg-transparent">
-        <a class="btn btn-primary" href="{% url 'edit_profile' user.id %}" > Edit profile </a>
-        <br>
-        <a  class="btn btn-danger mt-1" href="{% url 'logout' %}">Logout </a>
-        <hr>
-      </div>
-    </div>
-  </div>
 
-  <div class="d-flex justify-content-center">
-    <a class="btn btn-light mb-3" href="{% url 'add_book' %}"> Add New Book</a>
+
+<h3 class='pt-2'>{{user.username}}</h3>
+
+<p>  
+  {% if user.bio %}
+    {{user.bio}}
+    <br>
+  {% endif %}
+</p>
+<div class='row my-3'>
+  <div class= 'col-4 d-flex justify-content-start'>
+    <a class="btn btn-primary btn-block" href="{% url 'edit_profile' user.id %}" > Edit profile </a>
   </div>
+  <div class= 'col-4 d-flex justify-content-center'>
+    <a class="btn btn-light btn-block" href="{% url 'add_book' %}"> Add New Book</a>
+  </div>
+  <div class= 'col-4 d-flex justify-content-end'>
+    <a  class="btn btn-danger btn-block" href="{% url 'logout' %}">Log out </a>
+  </div>
+  
+</div>
+
 
   {% if not books %}
     <div class="d-flex justify-content-center">

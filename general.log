@@ -1847,3 +1847,127 @@ Traceback (most recent call last):
   File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 701, in __init__
     raise TemplateSyntaxError(
 django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: ''/images/favicon.png'' from 'url'/images/favicon.png''
+Watching for file changes with StatReloader
+Not Found: /favicon.ico/
+/code/books/views.py changed, reloading.
+Watching for file changes with StatReloader
+/code/books/views.py changed, reloading.
+Watching for file changes with StatReloader
+/code/books/views.py changed, reloading.
+Watching for file changes with StatReloader
+/code/books/views.py changed, reloading.
+Watching for file changes with StatReloader
+/code/accounts/views.py changed, reloading.
+Watching for file changes with StatReloader
+/code/accounts/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /accounts/2/edit/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 135, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/views/generic/base.py", line 119, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/views/generic/edit.py", line 204, in get
+    return super().get(request, *args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/views/generic/edit.py", line 144, in get
+    return self.render_to_response(self.get_context_data())
+  File "/usr/local/lib/python3.10/site-packages/django/views/generic/edit.py", line 74, in get_context_data
+    kwargs["form"] = self.get_form()
+  File "/usr/local/lib/python3.10/site-packages/django/views/generic/edit.py", line 38, in get_form
+    form_class = self.get_form_class()
+  File "/usr/local/lib/python3.10/site-packages/django/views/generic/edit.py", line 110, in get_form_class
+    return model_forms.modelform_factory(model, fields=self.fields)
+  File "/usr/local/lib/python3.10/site-packages/django/forms/models.py", line 648, in modelform_factory
+    return type(form)(class_name, (form,), form_class_attrs)
+  File "/usr/local/lib/python3.10/site-packages/django/forms/models.py", line 327, in __new__
+    raise FieldError(message)
+django.core.exceptions.FieldError: Unknown field(s) (password1, password2) specified for CustomUser
+/code/accounts/views.py changed, reloading.
+Watching for file changes with StatReloader
+/code/accounts/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /accounts/2/edit/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 132, in dispatch
+    user_test_result = self.get_test_func()()
+  File "/code/accounts/views.py", line 19, in test_func
+    user= self.get_object()
+  File "/usr/local/lib/python3.10/site-packages/django/views/generic/detail.py", line 31, in get_object
+    queryset = self.get_queryset()
+  File "/usr/local/lib/python3.10/site-packages/django/views/generic/detail.py", line 72, in get_queryset
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: ProfileUpdateView is missing a QuerySet. Define ProfileUpdateView.model, ProfileUpdateView.queryset, or override ProfileUpdateView.get_queryset().
+/code/accounts/views.py changed, reloading.
+Watching for file changes with StatReloader
+/code/accounts/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /accounts/2/edit/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 132, in dispatch
+    user_test_result = self.get_test_func()()
+  File "/code/accounts/views.py", line 19, in test_func
+    user= self.get_object()
+  File "/usr/local/lib/python3.10/site-packages/django/views/generic/detail.py", line 31, in get_object
+    queryset = self.get_queryset()
+  File "/usr/local/lib/python3.10/site-packages/django/views/generic/detail.py", line 72, in get_queryset
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: ProfileUpdateView is missing a QuerySet. Define ProfileUpdateView.model, ProfileUpdateView.queryset, or override ProfileUpdateView.get_queryset().
+/code/accounts/forms.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /accounts/2/edit/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 132, in dispatch
+    user_test_result = self.get_test_func()()
+  File "/code/accounts/views.py", line 19, in test_func
+    user= self.get_object()
+  File "/usr/local/lib/python3.10/site-packages/django/views/generic/detail.py", line 31, in get_object
+    queryset = self.get_queryset()
+  File "/usr/local/lib/python3.10/site-packages/django/views/generic/detail.py", line 72, in get_queryset
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: ProfileUpdateView is missing a QuerySet. Define ProfileUpdateView.model, ProfileUpdateView.queryset, or override ProfileUpdateView.get_queryset().
+/code/accounts/forms.py changed, reloading.
+Watching for file changes with StatReloader
+/code/accounts/forms.py changed, reloading.
+Watching for file changes with StatReloader
+/code/accounts/forms.py changed, reloading.
+Watching for file changes with StatReloader
+/code/accounts/forms.py changed, reloading.
+Watching for file changes with StatReloader
+/code/accounts/forms.py changed, reloading.
+Watching for file changes with StatReloader
+/code/accounts/admin.py changed, reloading.
+Watching for file changes with StatReloader
+/code/accounts/admin.py changed, reloading.
+Watching for file changes with StatReloader

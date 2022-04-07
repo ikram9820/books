@@ -5,19 +5,17 @@
       
       <div class= "card-header">
         <div class="row">
-          <div class=" col-4 d-flex justify-content-start">
+          <div class=" col-6 d-flex justify-content-start">
             
             <h5 class="card-text text-truncate" ><a style="text-decoration:none;" href=" {% if not book.user == user %} {% url 'user_profile' book.user.username %} 
-                 {% else %} {% url 'my_profile' %} {% endif %} "  >{{book.user.username}}</a></h5>
-           
-              
+                 {% else %} {% url 'my_profile' %} {% endif %} "  >{{book.user.username}}</a></h5>          
           </div>
     
-          <div class="col-4 d-flex justify-content-center">
+          <div class="col-3 d-flex justify-content-start">
             <h6 class="card-text"> <small class="text-muted"> {{book.posted_at|date:"d/b/Y"}} </small> </h6>
           </div>
     
-          <div class="col-4 d-flex justify-content-end">
+          <div class="col-3 d-flex justify-content-end">
             {% if book.user == user %}
             <div class="pe-2 dropdown">
               <i class="bi bi-three-dots-vertical" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">

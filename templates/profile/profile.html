@@ -3,28 +3,21 @@
  {% block content %}
 
 
- <div class="d-flex justify-content-center">
-
-  <div class="mb-3 w-100"  >
-    <div class="card-header bg-transparent "><h3>{{profile_user.username}}</h3></div>
-    <div class="card-body">
-      <p class="card-text">  
+   
+      <h3 class='pt-2'>{{profile_user.username}}</h3>
+      <p>  
         {% if profile_user.bio %}
-        {{profile_user.bio}}
-        <br>
+          {{profile_user.bio}}
+          <br>
         {% endif %}
       </p>
-    </div>
-    <div class="card-footer bg-transparent">
-    </div>
-  </div>
-</div>
+
+
 
 
  {% if not books %}
- <div class="d-flex justify-content-center">
-  <h4>There is no book in this profile</h4>
- </div>
+  <h4 >There is no book in this profile</h4>
+
   {% else %}
 
     {% include '_pagination.html' %}
