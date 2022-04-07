@@ -21,13 +21,13 @@
 </p>
 <div class='row my-3'>
   <div class= 'col-4 d-flex justify-content-start'>
-    <div><a class="btn btn-primary " href="{% url 'edit_profile' user.id %}" > Edit profile </a></div>
+    <div><a class="btn btn-primary btn-sm " href="{% url 'edit_profile' user.id %}" > Edit profile </a></div>
   </div>
   <div class= 'col-4 d-flex justify-content-center'>
-    <div><a class="btn btn-light " href="{% url 'add_book' %}"> Add New Book</a></div>
+    <div><a class="btn btn-light btn-sm " href="{% url 'add_book' %}"> Add Book</a></div>
   </div>
   <div class= 'col-4 d-flex justify-content-end'>
-    <div><a  class="btn btn-danger" href="{% url 'logout' %}">Log out </a></div>
+    <div><a  class="btn btn-danger btn-sm" href="{% url 'logout' %}">Log out </a></div>
   </div>
   
 </div>
