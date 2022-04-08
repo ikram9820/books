@@ -11,7 +11,7 @@ class BookListView(ListView):
     model = Book
     template_name = 'books/book_list.html'
     context_object_name = 'books'
-    paginate_by = 10
+    paginate_by = 12
 
     def get_queryset(self):
         return Book.objects.filter(is_visible=True).order_by('-posted_at').select_related('user')
@@ -73,16 +73,28 @@ class BookDelteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
             return True
         return False
 
+def get_favorite(request):
+    user=request.user if request.user.is_authenticated else None
+    if request.user.is_authenticated:
+        try:
+            fav=Favorite.objects.get(user=user)
+        except:
+            fav=None
+    else:
+        try:
+            fav=Favorite.objects.get(id=request.session.get('fav_uuid', None))
+        except:
+            fav=None  
+        
+    if not fav:
+        fav= Favorite.objects.create(user=user)
+        request.session['fav_uuid'] = str(fav.id)
+
+    return fav 
 
 def get_fav_book_list(request):
-    # ,user=request.user if request.user.is_authenticated else None)
-    fav, created = Favorite.objects.get_or_create(
-        id=request.session.get('fav_uuid', None))
-    if created:
-        request.session['fav_uuid'] = str(fav.id)
-    # if request.user.is_authenticated:
-    #     fav_books=FavoriteBook.objects.filter(favorite=fav).only('book')
-    # else:
+    fav =get_favorite(request)
+
     fav_books = FavoriteBook.objects.filter(
         favorite=fav).only('book').select_related('book__user')
     books = []
@@ -92,19 +104,15 @@ def get_fav_book_list(request):
     return render(request, 'books/fav.html', {'books': books})
 
 
+
 def add_book_to_fav(request, pk):
-    # ,user=request.user if request.user.is_authenticated else None)
-    fav, created = Favorite.objects.get_or_create(
-        id=request.session.get('fav_uuid', None))
-    if created:
-        request.session['fav_uuid'] = str(fav.id)
+    fav =get_favorite(request)
 
     try:
         fav_book = FavoriteBook.objects.get(favorite=fav, book_id=pk)
         fav_book.delete()
     except FavoriteBook.DoesNotExist:
         FavoriteBook.objects.create(favorite=fav, book_id=pk)
-    # FavoriteBook.objects.create(favorite= fav,book_id=pk )
     return redirect('book_list')
 
 
@@ -112,7 +120,7 @@ class ProfileListView(ListView):
     model = Book
     template_name = 'profile/profile.html'
     context_object_name = 'books'
-    paginate_by = 10
+    paginate_by = 12
 
     def get_context_data(self, **kwargs):
         context = super(ProfileListView, self).get_context_data(**kwargs)
@@ -130,7 +138,7 @@ class MyProfileListView(LoginRequiredMixin, ListView):
     model = Book
     template_name = 'profile/my_profile.html'
     context_object_name = 'books'
-    paginate_by = 10
+    paginate_by = 12
 
     def get_queryset(self):
         if self.request.user.is_authenticated:

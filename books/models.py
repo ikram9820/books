@@ -95,7 +95,7 @@ class Store(models.Model):
 class Favorite(models.Model):
     id= models.UUIDField(primary_key=True, default=uuid.uuid4 ,editable=False)
     at= models.DateTimeField(auto_now_add=True)
-    user= models.ForeignKey(get_user_model(),on_delete=models.CASCADE,related_name='favorite',null=True,blank=True)
+    user= models.ForeignKey(get_user_model(),on_delete=models.CASCADE,related_name='favorite',null=True,blank=True,unique=True)
 
 class FavoriteBook(models.Model):
     favorite=models.ForeignKey(Favorite,on_delete=models.CASCADE,related_name='favorite_book')
