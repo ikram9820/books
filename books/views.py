@@ -73,27 +73,30 @@ class BookDelteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
             return True
         return False
 
+
 def get_favorite(request):
-    user=request.user if request.user.is_authenticated else None
+    user = request.user if request.user.is_authenticated else None
     if request.user.is_authenticated:
         try:
-            fav=Favorite.objects.get(user=user)
+            fav = Favorite.objects.get(user=user)
         except:
-            fav=None
+            fav = None
     else:
         try:
-            fav=Favorite.objects.get(id=request.session.get('fav_uuid', None))
+            fav = Favorite.objects.get(
+                id=request.session.get('fav_uuid', None))
         except:
-            fav=None  
-        
+            fav = None
+
     if not fav:
-        fav= Favorite.objects.create(user=user)
+        fav = Favorite.objects.create(user=user)
         request.session['fav_uuid'] = str(fav.id)
 
-    return fav 
+    return fav
+
 
 def get_fav_book_list(request):
-    fav =get_favorite(request)
+    fav = get_favorite(request)
 
     fav_books = FavoriteBook.objects.filter(
         favorite=fav).only('book').select_related('book__user')
@@ -104,9 +107,8 @@ def get_fav_book_list(request):
     return render(request, 'books/fav.html', {'books': books})
 
 
-
 def add_book_to_fav(request, pk):
-    fav =get_favorite(request)
+    fav = get_favorite(request)
 
     try:
         fav_book = FavoriteBook.objects.get(favorite=fav, book_id=pk)
@@ -152,8 +154,18 @@ class MyProfileListView(LoginRequiredMixin, ListView):
 class SearchResultsListView(ListView):
     model = Book
     context_object_name = 'books'
-    tempalte_name = 'books/search_results.html'
+    template_name = 'books/search_results.html'
 
     def get_queryset(self):
         query = self.request.GET.get('q')
-        return Book.objects.filter(Q(title__icontains=query) & Q(is_visible=True)).order_by('-posted_at').select_related('user')
+        query = query.strip()
+        search_for = self.request.GET.get('f')
+        user = self.request.GET.get('user')
+        if search_for == 'book_list':
+            return Book.objects.filter(Q(title__icontains=query) & Q(is_visible=True)).order_by('-posted_at').select_related('user')
+        # elif search_for == 'favorite':
+            # return Book.objects.filter(Q(title__icontains=query) & Q(is_visible=True)).order_by('-posted_at').select_related('user')
+        elif search_for == 'my_profile':
+            return Book.objects.filter(Q(title__icontains=query) & Q(user__username=user)).order_by('-posted_at').select_related('user')
+        elif search_for == 'profile':
+            return Book.objects.filter(Q(title__icontains=query) & Q(is_visible=True) & Q(user__username=user)).order_by('-posted_at').select_related('user')

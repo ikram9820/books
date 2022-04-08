@@ -2171,3 +2171,148 @@ Watching for file changes with StatReloader
 Watching for file changes with StatReloader
 /code/books/views.py changed, reloading.
 Watching for file changes with StatReloader
+Not Found: /favicon.ico/
+/code/books/views.py changed, reloading.
+Watching for file changes with StatReloader
+/code/books/views.py changed, reloading.
+Watching for file changes with StatReloader
+/code/books/views.py changed, reloading.
+Watching for file changes with StatReloader
+/code/books/views.py changed, reloading.
+Watching for file changes with StatReloader
+/code/books/views.py changed, reloading.
+Watching for file changes with StatReloader
+/code/books/views.py changed, reloading.
+Watching for file changes with StatReloader
+/code/books/views.py changed, reloading.
+Watching for file changes with StatReloader
+/code/books/views.py changed, reloading.
+Watching for file changes with StatReloader
+/code/books/views.py changed, reloading.
+Watching for file changes with StatReloader
+/code/books/views.py changed, reloading.
+Watching for file changes with StatReloader
+/code/books/views.py changed, reloading.
+Watching for file changes with StatReloader
+/code/books/views.py changed, reloading.
+Watching for file changes with StatReloader
+/code/books/views.py changed, reloading.
+Watching for file changes with StatReloader
+/code/books/views.py changed, reloading.
+Watching for file changes with StatReloader
+/code/books/views.py changed, reloading.
+Watching for file changes with StatReloader
+/code/books/views.py changed, reloading.
+Watching for file changes with StatReloader
+/code/books/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /search/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/views/generic/base.py", line 119, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/views/generic/list.py", line 154, in get
+    self.object_list = self.get_queryset()
+  File "/code/books/views.py", line 159, in get_queryset
+    query=query.trim()
+AttributeError: 'str' object has no attribute 'trim'
+/code/books/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /search/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/fields/__init__.py", line 1988, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'ik98'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/views/generic/base.py", line 119, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/views/generic/list.py", line 154, in get
+    self.object_list = self.get_queryset()
+  File "/code/books/views.py", line 167, in get_queryset
+    return Book.objects.filter(Q(title__icontains=query) & Q(user=user)).order_by('-posted_at').select_related('user')
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/query.py", line 1071, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/query.py", line 1089, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/query.py", line 1096, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1466, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1496, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1323, in build_filter
+    return self._add_q(
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1496, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1412, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1242, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/fields/related_lookups.py", line 154, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/fields/__init__.py", line 1990, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'ik98'.
+/code/books/views.py changed, reloading.
+Watching for file changes with StatReloader
+/code/books/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/code/books/urls.py changed, reloading.
+Watching for file changes with StatReloader
+Forbidden (CSRF token missing.): /search/
+Internal Server Error: /search/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/views/generic/base.py", line 119, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/views/generic/list.py", line 154, in get
+    self.object_list = self.get_queryset()
+  File "/code/books/views.py", line 159, in get_queryset
+    query=query.strip()
+AttributeError: 'NoneType' object has no attribute 'strip'
+Forbidden (CSRF token missing.): /search/
+Method Not Allowed (POST): /search/
+Method Not Allowed: /search/
+/code/books/views.py changed, reloading.
+Watching for file changes with StatReloader
+Method Not Allowed (POST): /search/
+Method Not Allowed: /search/
+Method Not Allowed (POST): /search/
+Method Not Allowed: /search/
+Method Not Allowed (POST): /search/
+Method Not Allowed: /search/
+/code/books/views.py changed, reloading.
+Watching for file changes with StatReloader
+Method Not Allowed (POST): /search/
+Method Not Allowed: /search/
+Method Not Allowed (POST): /search/
+Method Not Allowed: /search/
+/code/books/views.py changed, reloading.
+Watching for file changes with StatReloader
+/code/books/views.py changed, reloading.
+Watching for file changes with StatReloader
+/code/books/views.py changed, reloading.
+Watching for file changes with StatReloader

@@ -1,22 +1,19 @@
 {% extends '_base.html' %}
 
-{% block title %} Search {% endblock title %}
+{% block title %} Search results {% endblock title %}
 
 {% block content%}
 
 {% if not books %}
-  <h4>There is no book</h4>
-{% else %}
   <div class="d-flex justify-content-center">
-  <form class="form-inline mt-2 mb-2 mt-md-0" action="{% url 'search_results' %}" method= 'get'>
-      <input name='q' class="form-control mr-sm-2 w-100"  type="text" placeholder='Search' aria-label='Search'>
-  </form>
-  <p class="h1">Search result</p>
+    <h4>There is no book</h4>
   </div>
-
+{% else %}
+<div class="d-flex justify-content-center">
+    <h4>Search results</h4>
+  </div>
   {% include '_pagination.html' %}
   {% include '_post_card.html' %}
-
 {% endif %} 
 
 {% endblock content %}

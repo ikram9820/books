@@ -27,7 +27,7 @@
     <div><a class="btn btn-light btn-sm " href="{% url 'add_book' %}"> Add Book</a></div>
   </div>
   <div class= 'col-4 d-flex justify-content-end'>
-    <div><a  class="btn btn-danger btn-sm" href="{% url 'logout' %}">Log out </a></div>
+    <div><a  class="btn btn-danger btn-sm" href="{% url 'logout' %}">Log  out  </a></div>
   </div>
   
 </div>
@@ -35,9 +35,16 @@
 
   {% if not books %}
     <div class="d-flex justify-content-center">
-      <h4>There is no book in this profile</h4>
+      <h4>There is no book in your profile</h4>
     </div>
   {% else %}
+    <div class="d-flex justify-content-center">
+    <form class="form-inline mt-2 mb-2 mt-md-0 w-100" action="{% url 'search_results' %}" method= 'get'>
+        <input name='f' type='hidden' value='my_profile' >
+        <input name='user' type='hidden' value="{{user.username}}" >
+        <input name='q' class="form-control mr-sm-2 "  type="text" placeholder='Search in your profile' aria-label='Search'>
+    </form>
+    </div>
     {% include '_pagination.html' %}
     {% include '_post_card.html' %}
   {% endif %} 

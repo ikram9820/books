@@ -9,6 +9,12 @@
   <h4>There is no favorite book</h4>
  </div>
 {% else %}
+{% comment %} <div class="d-flex justify-content-center">
+  <form class="form-inline mt-2 mb-2 mt-md-0 w-100" action="{% url 'search_results' %}" method= 'get'>
+      <input name='f' type='hidden' value='favorite' >
+      <input name='q' class="form-control mr-sm-2 "  type="text" placeholder='Search in your favorite books' aria-label='Search'>
+  </form>
+</div> {% endcomment %}
   {% include '_post_card.html' %}
 {% endif %}
 {% endblock content %}

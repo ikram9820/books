@@ -5,19 +5,19 @@
       
       <div class= "card-header">
         <div class="row">
-          <div class=" col-6 d-flex justify-content-start">
+          <div class=" col-5 d-flex justify-content-start">
             
-            <h5 class="card-text text-truncate" ><a style="text-decoration:none;" href=" {% if not book.user == user %} {% url 'user_profile' book.user.username %} 
-                 {% else %} {% url 'my_profile' %} {% endif %} "  >{{book.user.username}}</a></h5>          
+            <h6 class="card-text text-truncate" ><a style="text-decoration:none;" href=" {% if not book.user == user %} {% url 'user_profile' book.user.username %} 
+                 {% else %} {% url 'my_profile' %} {% endif %} "  >{{book.user.username}}</a></h6>          
           </div>
     
-          <div class="col-3 d-flex justify-content-start">
+          <div class="col-4 d-flex justify-content-start">
             <h6 class="card-text"> <small class="text-muted"> {{book.posted_at|date:"d/b/Y"}} </small> </h6>
           </div>
     
           <div class="col-3 d-flex justify-content-end">
             {% if book.user == user %}
-            <div class="pe-2 dropdown">
+            <div class="pe-1 dropdown">
               <i class="bi bi-three-dots-vertical" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
               </i>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -40,7 +40,7 @@
         <div class="row g-0">
           <div class="col-4">
            
-            <img  class="w-75" src="/{{book.cover_url}}" />
+            <img  class="w-75 " src="/{{book.cover_url}}" />
            
           </div>
           <div class="col-8">       
@@ -53,7 +53,7 @@
                 <h6 class="card-text"> <small class="text-muted">pages: {{book.pages}} </small> </h6>
               {% endif %}
               
-              <h6 class="card-text"> <a href="{{book.pdf.url}}" download class= "btn btn-success bi bi-download">     {{book.size}} </a> </h6>
+              <h6 class="card-text"> <a href="{{book.pdf.url}}" download class= "btn btn-success btn-sm bi bi-download">     {{book.size}} </a> </h6>
       
           </div>
         </div>
