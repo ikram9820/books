@@ -1,2 +1,4 @@
 *.pyc
 /general.log/
+/staticfiles/
+/static/
