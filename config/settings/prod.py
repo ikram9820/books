@@ -30,5 +30,5 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' 
-
+STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
 
