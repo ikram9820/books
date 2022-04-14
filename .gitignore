@@ -1,5 +1,2 @@
 *.pyc
-/staticfiles/
 /general.log/
-/docker_compose.yml/
-/Dockerfile/
