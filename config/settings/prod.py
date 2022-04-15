@@ -1,7 +1,7 @@
 from .common import *
 from environs import Env
 import dj_database_url
-
+import django_on_heroku
 env = Env()
 env.read_env()
 
@@ -11,9 +11,32 @@ SECRET_KEY = os.environ['SECRET_KEY']
 
 ALLOWED_HOSTS = [os.environ['DJANGO_ALLOWED_HOSTS']]#['bookishpdf-prod.herokuapp.com','localhost']
 
+AWS_ACCESS_KEY_ID= os.environ['AWS_ACCESS_KEY_ID']
+AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
+AWS_STORAGE_BUCKET_NAME = os.environ['AWS_STORAGE_BUCKET_NAME']
+AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+AWS_DEFAULT_ACL = 'public-read'
+AWS_S3_OBJECT_PARAMETERS = {'CacheControl':'max-age-86400'}
+AWS_LOCATION = 'static'
+AWS_HEADER = {'Access-Control-Allow-Origin':'*'}
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+STATIC_URL= 'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
+MEDIA_URL= 'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
+
+
+
+
 DATABASES = {
     "default": dj_database_url.config()
 }
+
+django_on_heroku.settings(locals(),staticfiles=False)
+del DATABASES['default']['OPTIONS']['sslmode']
+
+
+
+
 
 CACHE_MIDDLEWARE_ALIAS = 'default'
 CACHE_MIDDLEWARE_SECONDS = 604800
@@ -30,5 +53,4 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' 
-STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
 

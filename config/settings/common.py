@@ -5,16 +5,6 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]
-
-STATICFILES_FINDERS = [
-    "django.contrib.staticfiles.finders.FileSystemFinder",
-    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
-]
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
@@ -43,6 +33,8 @@ INSTALLED_APPS = [
     'crispy_forms',
     'crispy_bootstrap5',
     "debug_toolbar",
+    "storages",
+    "django_extensions"
 
     'accounts',
     'books',

@@ -17,6 +17,11 @@ environs = "*"
 whitenoise = "*"
 dj-database-url = "*"
 psycopg2 = "*"
+django-on-heroku = "*"
+django-extensions = "*"
+python-dotenv = "*"
+django-storages = "*"
+boto3 = "*"
 
 [dev-packages]
 autopep8 = "*"
