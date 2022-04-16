@@ -1,6 +1,5 @@
 from .common import *
 
-
 DEBUG = True
 SECRET_KEY = 'django-insecure-6j2@8g)ygvsiuvnh1w8cs&o)k**r'
 
@@ -18,9 +17,6 @@ STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-
-
-# Database
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
