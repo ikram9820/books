@@ -15,6 +15,8 @@ AUTH_USER_MODEL = 'accounts.CustomUser'
 LOGIN_REDIRECT_URL = 'my_profile'
 LOGOUT_REDIRECT_URL = 'book_list'
 
+ADMIN_MEDIA_PREFIX = '/static/admin/'
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -32,6 +34,7 @@ INSTALLED_APPS = [
     'accounts',
     'books',
 ]
+
 
 MIDDLEWARE = [
 
