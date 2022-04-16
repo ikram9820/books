@@ -16,7 +16,7 @@ def cover(url,title):
         image= page.get_pixmap()
         name=f"{title}.png"
         name=name.replace(' ','-')
-        url= f"{settings.MEDIA_URL}/book/covers/{name}"
+        url= f"{settings.STATIC_URL}/book/covers/{name}"
         image.save(url)
         return url
 
