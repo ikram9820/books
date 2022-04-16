@@ -2,6 +2,7 @@ from django.db import models
 from django.urls import reverse
 from django.contrib.auth import get_user_model
 from django.core.validators import FileExtensionValidator
+from django.core.files.base import ContentFile
 from django.conf import settings
 import uuid
 import PyPDF2
@@ -9,16 +10,13 @@ import fitz
 from books.validators import validate_pdf_size
 
 
-def cover(url,title):
+def cover(url):
     url= '.'+url
     with fitz.open(url) as pdf:
         page=pdf.loadPage(0)
         image= page.get_pixmap()
-        name=f"{title}.png"
-        name=name.replace(' ','-')
-        url= f"{settings.MEDIAL_ROOT}/book/covers/{name}"
-        image.save(url)
-        return url
+        stream = image.tobytes(output="png")
+        return stream
 
     
 def pages(url):
@@ -40,7 +38,7 @@ class Book(models.Model):
     posted_at= models.DateTimeField(auto_now_add=True)
     is_visible= models.BooleanField(default=True)
     pages=models.IntegerField(null=True,blank=True)
-    cover_url=models.CharField(max_length=220,null=True,blank=True)
+    cover = models.ImageField(upload_to='book/covers',null=True,blank=True)
     download_count= models.IntegerField(default=0)
     user= models.ForeignKey(get_user_model(),on_delete=models.PROTECT,related_name='book')
 
@@ -48,8 +46,8 @@ class Book(models.Model):
         self.title= str(self.title).title()
         super(Book,self).save(*args,**kwargs)
         try:
-            if not self.cover_url:
-                self.cover_url= cover(self.pdf.url,self.title)
+            if not self.cover:
+                self.cover.save(f'{self.title}.png',ContentFile(cover(self.pdf.url)))
             if not self.pages:
                 self.pages=pages(self.pdf.url)
         except Exception as e :
@@ -96,7 +94,7 @@ class Store(models.Model):
 class Favorite(models.Model):
     id= models.UUIDField(primary_key=True, default=uuid.uuid4 ,editable=False)
     at= models.DateTimeField(auto_now_add=True)
-    user= models.ForeignKey(get_user_model(),on_delete=models.CASCADE,related_name='favorite',null=True,blank=True,unique=True)
+    user= models.OneToOneField(get_user_model(),on_delete=models.CASCADE,related_name='favorite',null=True,blank=True,unique=True)
 
 class FavoriteBook(models.Model):
     favorite=models.ForeignKey(Favorite,on_delete=models.CASCADE,related_name='favorite_book')
