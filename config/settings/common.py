@@ -15,7 +15,20 @@ AUTH_USER_MODEL = 'accounts.CustomUser'
 LOGIN_REDIRECT_URL = 'my_profile'
 LOGOUT_REDIRECT_URL = 'book_list'
 
-ADMIN_MEDIA_PREFIX = '/static/admin/'
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]
+
+STATICFILES_FINDERS = [
+    "django.contrib.staticfiles.finders.FileSystemFinder",
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+]
+STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+# ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 INSTALLED_APPS = [
     'django.contrib.admin',
