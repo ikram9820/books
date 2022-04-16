@@ -2,6 +2,7 @@ from django.db import models
 from django.urls import reverse
 from django.contrib.auth import get_user_model
 from django.core.validators import FileExtensionValidator
+from django.conf import settings
 import uuid
 import PyPDF2
 import fitz
@@ -15,7 +16,7 @@ def cover(url,title):
         image= page.get_pixmap()
         name=f"{title}.png"
         name=name.replace(' ','-')
-        url= f"media/book/covers/{name}"
+        url= f"{settings.MEDIA_URL}/book/covers/{name}"
         image.save(url)
         return url
 

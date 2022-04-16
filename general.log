@@ -15,3 +15,4 @@ Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to A
 Bad Request: /
 Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
 Bad Request: /
+Not Found: /favicon.ico/
