@@ -3,7 +3,6 @@ from django.urls import reverse
 from django.contrib.auth import get_user_model
 from django.core.validators import FileExtensionValidator
 from django.core.files.base import ContentFile
-from django.conf import settings
 import uuid
 import PyPDF2
 import fitz
@@ -11,7 +10,6 @@ from books.validators import validate_pdf_size
 
 
 def cover(url):
-    url= '.'+url
     with fitz.open(url) as pdf:
         page=pdf.loadPage(0)
         image= page.get_pixmap()
