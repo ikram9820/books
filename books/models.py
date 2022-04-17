@@ -18,13 +18,13 @@ def cover(url):
 
     
 def pages(url):
-    url= '.'+url
-    file = open(url, 'rb')
-    try:
-        readpdf = PyPDF2.PdfFileReader(file)
-        return readpdf.numPages
-    except :
-        return 0
+    with open(url, 'rb') as file:
+        try:
+            readpdf = PyPDF2.PdfFileReader(file)
+            return readpdf.numPages
+        except :
+            return 0
+
 
 
 
@@ -45,11 +45,11 @@ class Book(models.Model):
         super(Book,self).save(*args,**kwargs)
         try:
             if not self.cover:
-                self.cover.save(f'{self.title}.png',ContentFile(cover(self.pdf.url)))
+                self.cover.save(f'{self.title}.png',ContentFile(cover(self.pdf.path)))
             if not self.pages:
-                self.pages=pages(self.pdf.url)
+                self.pages=pages(self.pdf.path)
         except Exception as e :
-            print("this the error in book model "+str(e))
+            print("this error is in book model "+str(e))
             book= Book.objects.get(id =self.id)
             book.delete()
             return
