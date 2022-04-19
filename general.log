@@ -1039,3 +1039,118 @@ Watching for file changes with StatReloader
 Watching for file changes with StatReloader
 /code/books/models.py changed, reloading.
 Watching for file changes with StatReloader
+Internal Server Error: /create/
+Traceback (most recent call last):
+  File "/code/books/models.py", line 52, in save
+    self.pages=pages(self.pdf.name)
+  File "/code/books/models.py", line 23, in pages
+    with open(url, 'rb') as file:
+FileNotFoundError: [Errno 2] No such file or directory: 'book/pdfs/Architectural_pattern_1nthxHD.pdf'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/views/generic/base.py", line 119, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/views/generic/edit.py", line 184, in post
+    return super().post(request, *args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/views/generic/edit.py", line 153, in post
+    return self.form_valid(form)
+  File "/code/books/views.py", line 28, in form_valid
+    return super().form_valid(form)
+  File "/usr/local/lib/python3.10/site-packages/django/views/generic/edit.py", line 135, in form_valid
+    self.object = form.save()
+  File "/usr/local/lib/python3.10/site-packages/django/forms/models.py", line 548, in save
+    self.instance.save()
+  File "/code/books/models.py", line 55, in save
+    book= Book.objects.get(id =self.id)
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/query.py", line 496, in get
+    raise self.model.DoesNotExist(
+books.models.Book.DoesNotExist: Book matching query does not exist.
+Not Found: /favicon.ico/
+Internal Server Error: /create/
+Traceback (most recent call last):
+  File "/code/books/models.py", line 52, in save
+    self.pages=pages(self.pdf.name)
+  File "/code/books/models.py", line 23, in pages
+    with open(url, 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: 'book/pdfs/Architectural_pattern_4JUwWrg.pdf'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/views/generic/base.py", line 119, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/views/generic/edit.py", line 184, in post
+    return super().post(request, *args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/views/generic/edit.py", line 153, in post
+    return self.form_valid(form)
+  File "/code/books/views.py", line 28, in form_valid
+    return super().form_valid(form)
+  File "/usr/local/lib/python3.10/site-packages/django/views/generic/edit.py", line 135, in form_valid
+    self.object = form.save()
+  File "/usr/local/lib/python3.10/site-packages/django/forms/models.py", line 548, in save
+    self.instance.save()
+  File "/code/books/models.py", line 55, in save
+    book= Book.objects.get(id =self.id)
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/query.py", line 496, in get
+    raise self.model.DoesNotExist(
+books.models.Book.DoesNotExist: Book matching query does not exist.
+Internal Server Error: /create/
+Traceback (most recent call last):
+  File "/code/books/models.py", line 52, in save
+    self.pages=pages(self.pdf.path)
+  File "/code/books/models.py", line 23, in pages
+    with open(url, 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: 'book/pdfs/Architectural_pattern_o3Y4Dov.pdf'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/views/generic/base.py", line 119, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/views/generic/edit.py", line 184, in post
+    return super().post(request, *args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/views/generic/edit.py", line 153, in post
+    return self.form_valid(form)
+  File "/code/books/views.py", line 28, in form_valid
+    return super().form_valid(form)
+  File "/usr/local/lib/python3.10/site-packages/django/views/generic/edit.py", line 135, in form_valid
+    self.object = form.save()
+  File "/usr/local/lib/python3.10/site-packages/django/forms/models.py", line 548, in save
+    self.instance.save()
+  File "/code/books/models.py", line 55, in save
+    book= Book.objects.get(id =self.id)
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/query.py", line 496, in get
+    raise self.model.DoesNotExist(
+books.models.Book.DoesNotExist: Book matching query does not exist.
