@@ -3,7 +3,6 @@ services:
   web:
     build: .
     command: bash -c "python /code/manage.py migrate && gunicorn config.wsgi -b 0.0.0.0:8000"
-    
     volumes:
       - .:/code
     ports:

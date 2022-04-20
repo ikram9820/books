@@ -12,8 +12,7 @@ class CustomUserCreationForm(UserCreationForm):
 
 class CustomUserChangeForm(UserChangeForm):
     
-    bio=forms.CharField(widget=forms.Textarea(attrs={"rows":3}))
+    bio=forms.CharField(widget=forms.Textarea(attrs={"rows":3 }),required=False)
     class Meta:
         model= get_user_model()
         fields= ('email','username','bio',)
-        

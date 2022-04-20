@@ -4,7 +4,9 @@ from django.db.models import Q
 from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .models import Book, Favorite, FavoriteBook
+from .forms import BookCreationForm
 from django.urls import reverse_lazy
+import fitz
 
 
 class BookListView(ListView):
@@ -17,25 +19,55 @@ class BookListView(ListView):
         return Book.objects.filter(is_visible=True).order_by('-posted_at').select_related('user')
 
 
+def cover(pdf):
+    with fitz.Document(stream = pdf, filetype='pdf') as pdf:
+        image = pdf.get_page_pixmap(0)
+        stream = image.tobytes(output="png")
+        return stream
+    
+def pages(pdf):
+    try:
+        with fitz.Document(stream = pdf, filetype='pdf') as pdf:
+            return pdf.page_count
+    except:
+        return 0
+
+from django.core.files.base import ContentFile
 class BookCreateView(LoginRequiredMixin, CreateView):
     model = Book
     template_name = 'books/book_form.html'
-    fields = ['title', 'author', 'pdf', 'is_visible']
+    form_class= BookCreationForm
     success_url = reverse_lazy('my_profile')
 
     def form_valid(self, form):
         form.instance.user = self.request.user
+        form.instance.title= form.instance.pdf.name
+        pdf=form.instance.pdf.read()
+        try:
+            form.instance.cover.save(f'{form.instance.title}.png',ContentFile(cover(pdf)))
+            form.instance.pages = pages(pdf)
+        except Exception as e:
+            print ("this error cause of form validation in BookCreatView ", e)
+            return super().form_invalid(form)
         return super().form_valid(form)
 
 
 class BookUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Book
     template_name = "books/book_form.html"
-    fields = ['title', 'author', 'pdf', 'is_visible']
+    form_class= BookCreationForm
     success_url = reverse_lazy('my_profile')
 
     def form_valid(self, form):
         form.instance.user = self.request.user
+        form.instance.title= form.instance.pdf.name
+        pdf=form.instance.pdf.read()
+        try:
+            form.instance.cover.save(f'{form.instance.title}.png',ContentFile(cover(pdf)))
+            form.instance.pages = pages(pdf)
+        except Exception as e:
+            print ("this error cause of form validation in BookCreatView ", e)
+            return super().form_invalid(form)
         return super().form_valid(form)
 
     def test_func(self):
@@ -62,7 +94,7 @@ class BookVisibilityUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateVi
         return False
 
 
-class BookDelteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+class BookDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Book
     success_url = reverse_lazy('my_profile')
     template_name = 'books/delete_book.html'
@@ -87,23 +119,19 @@ def get_favorite(request):
                 id=request.session.get('fav_uuid', None))
         except:
             fav = None
-
     if not fav:
         fav = Favorite.objects.create(user=user)
         request.session['fav_uuid'] = str(fav.id)
-
     return fav
 
 
 def get_fav_book_list(request):
     fav = get_favorite(request)
-
     fav_books = FavoriteBook.objects.filter(
         favorite=fav).only('book').select_related('book__user')
     books = []
     for fav_book in fav_books:
         books.append(fav_book.book)
-
     return render(request, 'books/fav.html', {'books': books})
 
 
@@ -147,7 +175,6 @@ class MyProfileListView(LoginRequiredMixin, ListView):
             user = self.request.user
         else:
             user = None
-
         return Book.objects.filter(user=user).order_by('-posted_at').select_related('user')
 
 
@@ -163,8 +190,6 @@ class SearchResultsListView(ListView):
         user = self.request.GET.get('user')
         if search_for == 'book_list':
             return Book.objects.filter(Q(title__icontains=query) & Q(is_visible=True)).order_by('-posted_at').select_related('user')
-        # elif search_for == 'favorite':
-            # return Book.objects.filter(Q(title__icontains=query) & Q(is_visible=True)).order_by('-posted_at').select_related('user')
         elif search_for == 'my_profile':
             return Book.objects.filter(Q(title__icontains=query) & Q(user__username=user)).order_by('-posted_at').select_related('user')
         elif search_for == 'profile':
