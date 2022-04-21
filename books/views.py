@@ -65,10 +65,11 @@ class BookUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     def form_valid(self, form):
         form.instance.user = self.request.user
-        if form.instance.title is None:
-            name = str(form.instance.pdf.name)
-            name = name.replace('book/pdfs/','').replace('.pdf','')
-            form.instance.title= name.title()
+        if form.instance.title == '':
+            name = form.instance.pdf.name
+            name = str(name).replace('book/pdfs/','').replace('.pdf','')
+            form.instance.title = name.title()            
+        form.instance.title = str(form.instance.title).title()
         pdf=form.instance.pdf.read()
         try:
             form.instance.cover.save(f'{form.instance.title}.png',ContentFile(cover(pdf)))
