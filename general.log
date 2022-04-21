@@ -1760,3 +1760,26 @@ Traceback (most recent call last):
 django.core.exceptions.ImproperlyConfigured: ProfileUpdateView is missing a QuerySet. Define ProfileUpdateView.model, ProfileUpdateView.queryset, or override ProfileUpdateView.get_queryset().
 Not Found: /static/images/favicon.png
 Not Found: /favicon.ico/
+Not Found: /static/debug_toolbar/css/print.css
+Not Found: /static/debug_toolbar/js/utils.js
+Not Found: /static/debug_toolbar/css/print.css
+Not Found: /static/debug_toolbar/js/utils.js
+Not Found: /static/debug_toolbar/css/print.css
+Not Found: /static/debug_toolbar/js/utils.js
+Not Found: /static/debug_toolbar/css/print.css
+Not Found: /static/debug_toolbar/js/utils.js
+Not Found: /static/debug_toolbar/css/print.css
+Not Found: /static/debug_toolbar/js/utils.js
+Not Found: /static/debug_toolbar/css/print.css
+Not Found: /static/debug_toolbar/js/utils.js
+Not Found: /static/debug_toolbar/css/print.css
+Not Found: /static/debug_toolbar/js/utils.js
+Not Found: /static/debug_toolbar/css/print.css
+Not Found: /static/debug_toolbar/js/utils.js
+Not Found: /static/debug_toolbar/css/print.css
+Not Found: /static/debug_toolbar/js/utils.js
+Not Found: /static/debug_toolbar/css/print.css
+Not Found: /static/debug_toolbar/js/utils.js
+Not Found: /static/debug_toolbar/css/print.css
+Not Found: /static/debug_toolbar/js/utils.js
+Not Found: /static/debug_toolbar/css/print.css
