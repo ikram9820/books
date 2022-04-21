@@ -24,11 +24,7 @@ AWS_QUERYSTRING_AUTH= False
 AWS_LOCATION = 'static'
 AWS_HEADER = {'Access-Control-Allow-Origin':'*'}
 
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' 
-
-DATABASES = {
-    "default": dj_database_url.config()
-}
+DATABASES = { "default": dj_database_url.config() }
 
 django_on_heroku.settings(locals(),staticfiles=False)
 del DATABASES['default']['OPTIONS']['sslmode']

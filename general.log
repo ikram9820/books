@@ -1758,3 +1758,5 @@ Traceback (most recent call last):
   File "/usr/local/lib/python3.10/site-packages/django/views/generic/detail.py", line 72, in get_queryset
     raise ImproperlyConfigured(
 django.core.exceptions.ImproperlyConfigured: ProfileUpdateView is missing a QuerySet. Define ProfileUpdateView.model, ProfileUpdateView.queryset, or override ProfileUpdateView.get_queryset().
+Not Found: /static/images/favicon.png
+Not Found: /favicon.ico/
