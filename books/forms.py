@@ -7,5 +7,5 @@ class BookCreationForm(forms.ModelForm):
     description = forms.CharField(widget=forms.Textarea(attrs={"rows":3 }),required=False)
     class Meta:
         model=Book
-        fields=['title','author','description','store_url','is_visible','pdf']
+        fields=['title','author','category','description','store_url','is_visible','pdf']
 
