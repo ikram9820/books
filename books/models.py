@@ -5,6 +5,10 @@ from django.core.validators import FileExtensionValidator
 from books.validators import validate_pdf_size
 import uuid
 
+    
+class Category(models.Model):
+    name = models.CharField(max_length=150)
+
 class Book(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     title = models.CharField(max_length=200)
@@ -13,9 +17,12 @@ class Book(models.Model):
                            validate_pdf_size, FileExtensionValidator(allowed_extensions=['pdf'])])
     posted_at = models.DateTimeField(auto_now_add=True)
     is_visible = models.BooleanField(default=True)
+    description = models.TextField(null=True,blank=True)
     pages = models.IntegerField(null=True, blank=True)
+    store_url = models.URLField(null=True, blank=True)
     cover = models.ImageField(upload_to='book/covers', null=True, blank=True)
     download_count = models.IntegerField(default=0)
+    category = models.ForeignKey(Category,on_delete=models.PROTECT,related_name='book',null=True,blank=True)
     user = models.ForeignKey(
         get_user_model(), on_delete=models.PROTECT, related_name='book')
 
@@ -36,13 +43,9 @@ class Book(models.Model):
 
     def get_absolute_url(self):
         return reverse("book_detail", args=[str(self.id)])
-    
 
-class Store(models.Model):
-    name = models.CharField(max_length=255)
-    url = models.URLField()
-    book = models.ForeignKey(
-        Book, on_delete=models.CASCADE, related_name='store')
+
+
 
 class Favorite(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)

@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404, redirect, render
-from django.views.generic import ListView, DeleteView, UpdateView, CreateView
+from django.views.generic import ListView, DeleteView, UpdateView, CreateView,DetailView
 from django.db.models import Q
 from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
@@ -33,6 +33,13 @@ def pages(pdf):
         return 0
 
 
+class BookDetailView(DetailView):
+    model= Book
+    template_name='books/book_detail.html'
+    context_object_name= 'book'
+
+
+
 from django.core.files.base import ContentFile
 class BookCreateView(LoginRequiredMixin, CreateView):
     model = Book
@@ -42,7 +49,7 @@ class BookCreateView(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.user = self.request.user
-        if form.instance.title == '':
+        if form.instance.title == '' or form.instance.title is None:
             name = form.instance.pdf.name
             name = str(name).replace('book/pdfs/','').replace('.pdf','')
             form.instance.title = name.title()            
@@ -65,7 +72,7 @@ class BookUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     def form_valid(self, form):
         form.instance.user = self.request.user
-        if form.instance.title == '':
+        if form.instance.title == '' or form.instance.title is None:
             name = form.instance.pdf.name
             name = str(name).replace('book/pdfs/','').replace('.pdf','')
             form.instance.title = name.title()            

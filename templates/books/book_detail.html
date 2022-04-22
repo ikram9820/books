@@ -1,6 +1,11 @@
+{% extends '_base.html' %}
+
+{% block title  %} {{book.title}} {% endblock title %}
+
+{% block content %}
+
 {% load static %}
 
-{% for book in books %}
 <div class="d-flex justify-content-center">
   
     <div class="card mb-2 w-100" >
@@ -46,9 +51,9 @@
            
           </div>
           <div class="col-8">       
-              <h6  class=" card-text text-truncate" ><a style="text-decoration:none;" href="{{book.get_absolute_url}}">{{book.title}}</a></h6>
-            
-              {% if book.author %}
+          
+              <h6 class=" card-text " >{{book.title}}</h6>
+              {% if book.author  %}
                 <h6 class="card-text"> <span class = 'text-muted'>By:</span> {{book.author}} </h6>
               {% endif %} 
               {% if book.pages is not None %}
@@ -59,8 +64,17 @@
       
           </div>
         </div>
+
+        {% if book.store_url is not None %} 
+            <a class = 'btn btn-primary btn sm my-2 '   href= "{{ book.store_url }}" > Buy this book here</a>
+        {% endif %}
+
+        {% if book.description %} 
+            <p class = 'card-text'> {{book.description}}</p>
+        {% endif %}
+
       </div>
     </div>
   </div>
 
-  {% endfor %}
+{% endblock content %}
