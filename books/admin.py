@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import Book,Favorite,FavoriteBook
+from .models import Book,Favorite,FavoriteBook , Category
 
-
+admin.site.register(Category)
 class BookAdmin(admin.ModelAdmin):
     list_display= ('title','user','author','is_visible','size')
     
