@@ -6,7 +6,7 @@ from books.validators import validate_pdf_size
 import uuid
 
     
-class Category(models.Model):
+class Genre(models.Model):
     name = models.CharField(max_length=150,unique=True)
     def __str__(self):
         return self.name
