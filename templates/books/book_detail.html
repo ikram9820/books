@@ -53,21 +53,47 @@
           <div class="col-8">       
           
               <h6 class=" card-text " >{{book.title}}</h6>
-              {% if book.author  %}
-                <h6 class="card-text"> <span class = 'text-muted'>By:</span> {{book.author}} </h6>
-              {% endif %} 
-              {% if book.pages is not None %}
-                <h6 class="card-text"> <small class="text-muted">pages: {{book.pages}} </small> </h6>
-              {% endif %}
               
-              <h6 class="card-text"> <a href="{{book.pdf.url}}" download class= "btn btn-success btn-sm bi bi-download">     {{book.size}} </a> </h6>
+              
+             {% if book.author %}
+
+                <h6 class="card-text"> <small class = 'text-muted'>By: {{book.author}} </small></h6>
+
+              {% endif %} 
+
+              {% if book.pages is not None %}
+
+                <h6 class="card-text"> <small class="text-muted">pages: {{book.pages}} </small> </h6>
+
+              {% endif %}
+
+              
+
+              <div class = 'row'>
+
+               <div class = 'col-6'>
+
+                <h6 class="card-text"> <a href="{{book.pdf.url}}" download class= "btn btn-success btn-sm bi bi-download">     {{book.size}} </a> </h6>
+
+               </div>
+
+               <div class='col-6 d-flex justify-content-end'>
+
+                {% if book.store_url is not None %} 
+
+                  <a class = 'btn btn-primary btn-sm '   href= "{{ book.store_url }}" > Buy here</a>
+
+                {% endif %}
+
+               </div>
+
+              </div>
       
           </div>
         </div>
 
-        {% if book.store_url is not None %} 
-            <a class = 'btn btn-primary btn sm my-2 '   href= "{{ book.store_url }}" > Buy this book here</a>
-        {% endif %}
+     
+
 
         {% if book.description %} 
             <p class = 'card-text'> {{book.description}}</p>
