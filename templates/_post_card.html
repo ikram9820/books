@@ -49,7 +49,7 @@
               <h6  class=" card-text text-truncate" ><a style="text-decoration:none;" href="{{book.get_absolute_url}}">{{book.title}}</a></h6>
             
               {% if book.author %}
-                <h6 class="card-text"> <span class = 'text-muted'>By:</span> {{book.author}} </h6>
+                <h6 class="card-text"> <small class = 'text-muted'>By: {{book.author}} </small></h6>
               {% endif %} 
               {% if book.pages is not None %}
                 <h6 class="card-text"> <small class="text-muted">pages: {{book.pages}} </small> </h6>
