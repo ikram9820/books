@@ -6,8 +6,12 @@ from books.validators import validate_pdf_size
 import uuid
 
     
-class Category(models.Model):
-    name = models.CharField(max_length=150)
+class Genre(models.Model):
+    name = models.CharField(max_length=150,unique=True)
+    def __str__(self):
+        return self.name
+    class Meta:
+        ordering = ['name']
 
 class Book(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
@@ -22,7 +26,7 @@ class Book(models.Model):
     store_url = models.URLField(null=True, blank=True)
     cover = models.ImageField(upload_to='book/covers', null=True, blank=True)
     download_count = models.IntegerField(default=0)
-    category = models.ForeignKey(Category,on_delete=models.PROTECT,related_name='book',null=True,blank=True)
+    genre = models.ForeignKey(Genre,on_delete=models.PROTECT,related_name='book',null=True,blank=True)
     user = models.ForeignKey(
         get_user_model(), on_delete=models.PROTECT, related_name='book')
 

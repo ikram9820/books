@@ -49,14 +49,22 @@
               <h6  class=" card-text text-truncate" ><a style="text-decoration:none;" href="{{book.get_absolute_url}}">{{book.title}}</a></h6>
             
               {% if book.author %}
-                <h6 class="card-text"> <span class = 'text-muted'>By:</span> {{book.author}} </h6>
+                <h6 class="card-text"> <small class = 'text-muted'>By: {{book.author}} </small></h6>
               {% endif %} 
               {% if book.pages is not None %}
                 <h6 class="card-text"> <small class="text-muted">pages: {{book.pages}} </small> </h6>
               {% endif %}
               
-              <h6 class="card-text"> <a href="{{book.pdf.url}}" download class= "btn btn-success btn-sm bi bi-download">     {{book.size}} </a> </h6>
-      
+              <div class = 'row'>
+               <div class = 'col-6'>
+                <h6 class="card-text"> <a href="{{book.pdf.url}}" download class= "btn btn-success btn-sm bi bi-download">     {{book.size}} </a> </h6>
+               </div>
+               <div class='col-6 d-flex justify-content-end'>
+                {% if book.store_url is not None %} 
+                  <a class = 'btn btn-primary btn-sm '   href= "{{ book.store_url }}" > Buy here</a>
+                {% endif %}
+               </div>
+              </div>
           </div>
         </div>
       </div>
