@@ -32,8 +32,10 @@
                 {% endif %}
               </ul>
             </div>
+{% else %}
+<a href="{% url 'add_book_to_fav' book.id %}" class= "bi bi-heart link-dark"> </a>
             {% endif %}
-            <a href="{% url 'add_book_to_fav' book.id %}" class= "bi bi-heart link-dark"> </a>
+            
           </div>
         </div>
       </div>
